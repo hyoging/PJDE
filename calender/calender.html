@@ -17,15 +17,51 @@
       $("#bottom").load("../footer/footer.html"); 
 
       });
+      
+      function clickSetting(){
+            var x = document.getElementById("setting");
+            if(x.style.visibility === "visible"){
+                x.style.visibility = "hidden";
+            }else{
+                x.style.visibility = "visible";
+            }
+        }
     </script>
     <style>
         .mid{
             margin-right: 20px;
         }
-        @media screen and (max-width: 968px){
-            .mid{
-                margin-right: 0px;
+        #setting{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            bottom: 341px;
+            display: flex;
+            visibility: hidden;
         }
+
+        #background{
+            background-color: black;
+            opacity: 50%;
+            width: 70%;
+            height: 100%;
+        }
+
+        #menu{
+            background-color: white;
+            width: 30%;
+            height: 100%;
+        }
+
+        #menu button{
+            float: right;
+            margin-top: 14px;
+            margin-right: 12px;
+        }
+
+        button{
+            background-color: white;
+            border: 0px;
         }
     </style>
 </head>
@@ -34,6 +70,12 @@
         <div class = top id="top"></div>
         <div class = mid id="mid"></div>
         <div class = bottom id ="bottom"></div>
+    </div>
+    <div id="setting">
+        <div id="background"></div>
+        <div id="menu">
+            <button onclick="clickSetting()"><img src="/img/menu_img.png" style="height: 40px; width: 40px;"/></button>
+        </div>
     </div>
 </body>
 </html>
