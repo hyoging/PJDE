@@ -40,6 +40,7 @@ body {
   width: 100%;
   border-top: 1px solid black;
   padding-top: 10px;
+  font-size: 11pt;
 }
 
 .col-12{
@@ -74,8 +75,4 @@ h5{
 
 .col-6{
   margin-left: 7%;
-}
-
-a{
-    font-size: 10pt;
 }
