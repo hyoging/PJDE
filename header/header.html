@@ -9,7 +9,7 @@
 <body>
     <nav class="header">
         <div class="logo">
-            <img src="/img/logo2.png" style="height: 60px; width: 60px;"/>
+            <img src="/img/logo2.png" style="height: 50px; width: 50px;"/>
             <span><a href="/main/main.html">프젝돔이</a></span>
         </div>
         
@@ -21,10 +21,26 @@
             <span><a href="/qna/qna.html">QnA</a></span>
         </div>
         <div class="setting_menu">
-            <img src="/img/menu_img.png" style="height: 40px; width: 40px;"/>
+            <button onclick="clickSetting()"><img src="/img/menu_img.png" style="height: 40px; width: 40px;"/></button>
         </div>
     </nav>
+    <div id="setting">
+        <div id="background"></div>
+        <div id="menu">
+            <button onclick="clickSetting()"><img src="/img/menu_img.png" style="height: 40px; width: 40px;"/></button>
+        </div>
+    </div>
 </body>
+<script>
+    function clickSetting(){
+        var x = document.getElementById("setting");
+        if(x.style.visibility === "visible"){
+            x.style.visibility = "hidden";
+        }else{
+            x.style.visibility = "visible";
+        }
+    }
+</script>
 </html>
 
 
