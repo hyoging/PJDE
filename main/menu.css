@@ -41,3 +41,13 @@
 .column{
     text-align: center;
 }
+.addButton{
+    width: 50px;
+    height: 50px;
+    background-color: #798FBA;
+    border-radius: 50px;
+}
+.plus{
+    width: 50px;
+    height:50px;
+}
