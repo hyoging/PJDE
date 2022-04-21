@@ -1,0 +1,34 @@
+@font-face {
+    font-family: 'paybooc-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'InfinitySans-BoldA1';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-BoldA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.pjWraper{
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+.inputPj{
+    text-align: center;
+}
+.inputPj input{
+    font-family: paybooc-Bold;
+    width: 1000px;
+    height: 50px;
+    margin-top: 20px;
+    font-size: 11pt;
+}
+.photoFrame{
+    width: 200px;
+    height: 200px;
+}
+.photoFrame:hover{
+    cursor: pointer;
+}

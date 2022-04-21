@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="/img/logo2.png">
+  <link rel="stylesheet" href="./addProject.css" />
+  <title>프젝돔이</title>
+</head>
+<body>
+  <input type="file" id="fileInput"/>
+  <div id="pictures">
+
+  </div>
+  <nav class="pjWraper">
+  <div class="inputPj">
+      <input type="text" placeholder="프로젝트 명"> <br>
+      <input type="text" placeholder=" 멤버 1"> <br>
+      <input type="text" placeholder=" 멤버 2"><br>
+      <a href="/main/main.html"><input type="button" value="완료" style="background-color: #798FBA; margin-top: 100px; font-size: 15pt;"></a>
+  </div>
+</nav>
+</body>
+<script>
+  var fileInput = document.getElementById("fileInput");
+  //값이 변경될때 호출 되는 이벤트 리스너
+  fileInput.addEventListener('change',function(e){
+    var file = e.target.files[0]; //선택된 파일
+    var reader = new FileReader();
+    reader.readAsDataURL(file); //파일을 읽는 메서드 
+
+    reader.onload = function(){
+      var photoFrame = document.createElement("div");
+      photoFrame.style = `background : url(${reader.result}); background-size : cover`;
+      photoFrame.className = "photoFrame";
+      document.getElementById("pictures").appendChild(photoFrame);
+      e.target.value = "";
+
+      photoFrame.addEventListener("click",function(){
+        document.getElementById("pictures").removeChild(photoFrame);
+      })
+    }
+  })
+</script>
+</html>
