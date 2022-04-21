@@ -4,9 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
     <title>Document</title>
 </head>
 <body>
-    <h1>todoList</h1>
+
+    <div class="inner">
+
+        <!-- 헤더 -->
+        <header>
+            <!-- <span class="material-icons header-icon">drive_file_rename_outline</span> -->
+            <h1>TO-DO LIST</h1>
+        </header>
+
+        <!-- 본문 -->
+        <div>
+            <!-- 전체/진행중/완료 조회 -->
+            <div class="searchBox">
+                <input type="button" class="searchBtn btn-all" value="전체 : 0">
+                <input type="button" class="searchBtn btn-before" value="진행중 : 0">
+                <input type="button" class="searchBtn btn-after" value="완료 : 0">
+            </div>
+
+            <!-- Todo-List -->
+            <div class="listBox">
+                <!-- 작성하기 -->
+                <div class="addBox">
+                    <div class="addBox_inner">
+                        <input type="text" class="addTxt" placeholder="할일 입력하기">
+                        <input type="button" class="addBtn" value="+">
+                    </div>
+                </div>
+
+                 <!-- 전체선택/삭제 -->
+                <div class="allCheckBox">
+                    <label class="allSelect_lb"><input type="checkbox" class="allSelect">전체선택</label>
+                    <a href="javascript:void(0)" class="allDel">전체삭제</a>
+                </div>
+
+                <!-- 목록 -->
+                <div class="listBox_inner"></div>
+            </div>
+
+           
+        </div>
+
+    </div>
 </body>
 </html>
