@@ -25,3 +25,10 @@
     margin-top: 20px;
     font-size: 11pt;
 }
+.photoFrame{
+    width: 200px;
+    height: 200px;
+}
+.photoFrame:hover{
+    cursor: pointer;
+}
