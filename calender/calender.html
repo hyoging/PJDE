@@ -51,17 +51,48 @@
             background-color: white;
             width: 30%;
             height: 100%;
+            padding-left: 20px;
+            padding-right: 20px;
         }
 
         #menu button{
             float: right;
-            margin-top: 14px;
-            margin-right: 12px;
+            position: relative;
+            bottom: 96px;
+            left: 8px;
         }
 
         button{
             background-color: white;
             border: 0px;
+        }
+        #profile{
+            display: flex;
+            margin-top: 50px;
+            align-items: center;
+        }
+        #id_name{
+            display: block;
+            margin-left: 10px;
+        }
+        #name{
+            font-size: 13pt;
+            margin-bottom: 3px;
+        }
+        #id{
+            font-size: 11pt;
+            color: gray;
+        }
+        #profile img{
+            border-radius: 50%;
+            background-color: black;
+        }
+        #menu p{
+            font-size: 18px;
+            padding-left: 8px;
+            padding-right: 8px;
+            margin-top: 15px;
+            margin-bottom: 15px;
         }
     </style>
 </head>
@@ -74,7 +105,28 @@
     <div id="setting">
         <div id="background"></div>
         <div id="menu">
+            <div id="profile">
+                <img src="/img/logo.png" style="height: 60px; width: 60px;"/>
+                <div id="id_name" style="width: 100px;">
+                    <div id="name">이름</div>
+                    <div id="id">아이디</div>
+                </div>
+            </div> 
             <button onclick="clickSetting()"><img src="/img/menu_img.png" style="height: 40px; width: 40px;"/></button>
+            <div style="margin-top: 50px;">
+                <p>NEW 공지</p>
+                <hr>
+            </div>
+            <div>
+                <p>프젝명 수정</p>
+                <p>프젝 삭제</p>
+                <p>멤버 수정</p>
+                <hr>
+            </div>
+            <div>
+                <p>로그아웃</p>
+                <p>회원 탈퇴</p>
+            </div>
         </div>
     </div>
 </body>

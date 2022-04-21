@@ -42,10 +42,11 @@ a{
     align-items: center;
     font-family: InfinitySans-BoldA1;
     font-size: 20pt;
+    margin-left: 5px;
 }
 
 .header span{
-    padding: 8px 20px;
+    padding: 8px 10px;
 }
 
 .headermenu{
