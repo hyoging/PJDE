@@ -32,9 +32,9 @@
 }
 
 .inputPj form input{
-    font-size:15pt;
+    font-size:10pt;
     text-align: left;
-    width: 30px;   
+    width: 70px;   
     height: 30px;
     border:none;
     background-color: transparent;
@@ -46,7 +46,7 @@
 }
 
 .inputPj form{
-  margin-left: 900px;
+  margin-left: 920px;
 }
 
 
