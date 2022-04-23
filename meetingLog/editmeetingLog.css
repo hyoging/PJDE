@@ -37,12 +37,26 @@
 }
 
 textarea{
+    font-family: InfinitySans-RegularA1;
     width: 950px;
     height: 500px;
     border: none;
     resize: none;
-    margin-left: 20px;
+    margin-left: 23px;
+    font-size: 20px;
 }
 .submit{
-    
+    font-family: InfinitySans-RegularA1;
+    width: 450px;
+    height: 50px;
+    font-size: 20px;
+    text-decoration: none;
+    /* margin:auto; */
+    margin-left: 700px;
+    bottom: 20px;
+    display:block;
+    background-color:  #798FBA;
+    color: white;
+    border: 0;
+    outline: 0;
 }
