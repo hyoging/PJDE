@@ -56,5 +56,6 @@ a{
 
 .setting_menu{
     width: 200px;
+    margin-right: 5px;
     text-align: right;
 }
