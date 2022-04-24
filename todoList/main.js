@@ -107,6 +107,8 @@ function checkList() {
             
         if(listEl.checked == true) {
             listLb[index].style.textDecoration = "line-through"
+            listLb[index].style.textDecorationColor = "black"
+            
         } else {
             listLb[index].style.textDecoration = "none"
         }
