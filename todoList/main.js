@@ -10,7 +10,24 @@ let listCheck = document.querySelectorAll('.listCheck');
 let allDel = document.querySelector('.allDel')
 let allSelect = document.querySelector('.allSelect')
 
+const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
 
+accordionItemHeaders.forEach(accordionItemHeader => {
+  accordionItemHeader.addEventListener("click", event => {
+
+
+
+    accordionItemHeader.classList.toggle("active");
+    const accordionItemBody = accordionItemHeader.nextElementSibling;
+    if(accordionItemHeader.classList.contains("active")) {
+      accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+    }
+    else {
+      accordionItemBody.style.maxHeight = 0;
+    }
+
+  });
+});
 // 리스트 추가1 - 'enter'버튼으로 추가하기
 addTxt.addEventListener('keyup', function(e) {
 
@@ -64,7 +81,7 @@ function addList() {
         // 텍스트 미입력시 경고 메시지 출력할 <div> 요소생성
         let noticeEl = document.createElement('div')
         noticeEl.setAttribute('class', 'notice')
-        noticeEl.innerHTML = '<span>* 내용을 입력해주세요</span>'
+        noticeEl.innerHTML = '<span>&nbsp&nbsp&nbsp&nbsp&nbsp* 내용을 입력해주세요</span>'
 
         addTxt.style.borderBottom = '1px solid rgb(201, 65, 65)'
 
