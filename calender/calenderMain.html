@@ -53,11 +53,11 @@
                     day = i.toString().length < 2? '0' + i : i
                     if (plusDate==0) {
                         $("#calendar tbody:last").append("<tr></tr>");
-                        $("#calendar tbody:last").append("<td class='date' style='color: red;'>"+ day +"</td>");
+                        $("#calendar tbody:last").append("<td class='date'><button style='color: red;'>"+ day +"</button></td>");
                     }else if(plusDate==6){
-                        $("#calendar tbody:last").append("<td class='date' style='color: blue;'>"+ day +"</td>");
+                        $("#calendar tbody:last").append("<td class='date'><button style='color: blue;'>"+ day +"</button></td>");
                     }else{
-                        $("#calendar tbody:last").append("<td class='date'>"+ day +"</td>");
+                        $("#calendar tbody:last").append("<td class='date'><button>"+ day +"</button></td>");
                     }
                     
                     

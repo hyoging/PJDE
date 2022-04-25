@@ -55,10 +55,18 @@ th {
     background-color:  white;
 }
 td {
-    height: 70px;
+    height: 90px;
     vertical-align : top;
-    background-color: white; 
-    padding: 10px;
+    background-color: white;
+}
+td button{
+    font-size: 20px;
+    height: 90px;
+    width: 72.9px;
+    padding-right: 130px;
+    padding-bottom: 50px;
+    border: none;
+    background-color: white;
 }
 input {
     border: none;
