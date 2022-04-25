@@ -13,11 +13,9 @@
       $(document).ready( function() {
 
       $("#top").load("../header/header.html");  
-      $("#mid").load("calenderMain.html");
-      $("#bottom").load("../footer/footer.html"); 
-
+      $("#mid").load("./calenderMain.html"); 
+      $("#bottom").load("../footer/footer.html");
       });
-      
       function clickSetting(){
             var x = document.getElementById("setting");
             if(x.style.visibility === "visible"){
@@ -60,9 +58,9 @@
 
         #menu button{
             float: right;
-            position: relative;
-            bottom: 96px;
-            left: 3px;
+            position: fixed;
+            right: 0px;
+            top: 14px;
         }
 
         button{
@@ -102,7 +100,7 @@
 <body>
     <div class="container">
         <div class = top id="top"></div>
-        <div class = mid id="mid"></div>
+        <div class = mid id="mid" style="height: 800px;"></div>
         <div class = bottom id ="bottom"></div>
     </div>
     <div id="setting">

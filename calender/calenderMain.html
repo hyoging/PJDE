@@ -5,39 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-
+    <link rel="stylesheet" href="./calenderStyle.css" />
     <title>calendar</title>
-
-    <style>
-        table {
-            clear: both;
-        }
-        th {
-            height: 50px;
-            width: 70px;
-            background-color:  orange;
-        }
-        td {
-            text-align: center;
-            height: 50px;
-            width: 70px;
-            background-color: #FFFDC5;  
-        }
-        input {
-            height: 50px;
-            width: 70px;
-            border: none;
-            background-color:  orange;
-            font-size: 30px;
-        }
-        .year_mon{
-            font-size: 25px;
-        }
-        .colToday{
-            background-color: #FFA07A;
-        }
-
-    </style>
 
     <script>
         $(function(){
@@ -66,22 +35,32 @@
                 firstDate = new Date(nowYear,nowMonth,1).getDate();
                 firstDay = new Date(nowYear,nowMonth,1).getDay(); //1st의 요일
                 lastDate = new Date(nowYear,nowMonth+1,0).getDate();
+                monthEng = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"];
 
                 if((nowYear%4===0 && nowYear % 100 !==0) || nowYear%400===0) { //윤년 적용
                     lastDate[1]=29;
                 }
 
-                $(".year_mon").text(nowYear+"년 "+(nowMonth+1)+"월");
+                $(".mon").text((nowMonth+1).toString().length < 2? '0' + (nowMonth+1) : (nowMonth+1));
+                $(".year").text(nowYear);
+                $(".mon_eng").text(monthEng[nowMonth]);
 
                 for (i=0; i<firstDay; i++) { //첫번째 줄 빈칸
                     $("#calendar tbody:last").append("<td></td>");
                 }
                 for (i=1; i <=lastDate; i++){ // 날짜 채우기
                     plusDate = new Date(nowYear,nowMonth,i).getDay();
+                    day = i.toString().length < 2? '0' + i : i
                     if (plusDate==0) {
                         $("#calendar tbody:last").append("<tr></tr>");
+                        $("#calendar tbody:last").append("<td class='date' style='color: red;'>"+ day +"</td>");
+                    }else if(plusDate==6){
+                        $("#calendar tbody:last").append("<td class='date' style='color: blue;'>"+ day +"</td>");
+                    }else{
+                        $("#calendar tbody:last").append("<td class='date'>"+ day +"</td>");
                     }
-                    $("#calendar tbody:last").append("<td class='date'>"+ i +"</td>");
+                    
+                    
                 }
                 if($("#calendar > tbody > td").length%7!=0) { //마지막 줄 빈칸
                     for(i=1; i<= $("#calendar > tbody > td").length%7; i++) {
@@ -94,6 +73,7 @@
                     }
                 }) 
             }
+
             buildCalendar();
 
 
@@ -102,25 +82,33 @@
 
 </head>
 <body>
-    <table id="calendar">
-        <thead>
-            <tr>
-                <th><input name="preMon" type="button" value="<"></th>
-                <th colspan="5" class="year_mon"></th>
-                <th><input name="nextMon" type="button" value=">"></th>
-            </tr>
-            <tr>
-                <th>일</th>
-                <th>월</th>
-                <th>화</th>
-                <th>수</th>
-                <th>목</th>
-                <th>금</th>
-                <th>토</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
+    <div id="frame">
+        <div id="calender_head">
+            <input name="preMon" type="button" value="<">
+            <div id="month">
+                <div class="mon"></div>
+                <div style="font-size: 19px;">
+                    <div class="year"></div>
+                    <div class="mon_eng" style="color: #798FBA;"></div>
+                </div>
+            </div>
+            <input name="nextMon" type="button" value=">">
+        </div>
+        <table id="calendar">
+            <thead>
+                <tr id="day" style="height: 45px;">
+                    <th style="color: red;">SUN</th>
+                    <th>MON</th>
+                    <th>TUE</th>
+                    <th>WED</th>
+                    <th>THU</th>
+                    <th>FRI</th>
+                    <th style="color: blue;">SAT</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

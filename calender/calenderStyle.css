@@ -1,0 +1,75 @@
+@font-face {
+    font-family: 'paybooc-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'paybooc-ExtraBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-ExtraBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body{
+    height: 100%;
+}
+
+body{
+    box-sizing: border-box;
+    width: 100vw;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+#frame{
+    font-family: 'paybooc-Bold';
+    width: 1000px;
+    border: solid 1px black;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    padding-bottom: 30px;
+    margin-top: 50px;
+}
+#calender_head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 35px 30px 35px;
+}
+#month{
+    display: flex;
+    align-items: center;
+}
+table {
+    width: 930px;
+    border: solid 1px rgb(167, 166, 166);
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-size: 16px;
+}
+th {
+    width: 70px;
+    background-color:  white;
+}
+td {
+    height: 70px;
+    vertical-align : top;
+    background-color: white; 
+    padding: 10px;
+}
+input {
+    border: none;
+    background-color:  white;
+    font-size: 20px;
+}
+.mon{
+    font-family: 'paybooc-ExtraBold';
+    font-size: 60px;
+    margin-right: 10px;
+}
+.colToday{
+    box-shadow: 0 0 0 1px red inset;
+}
