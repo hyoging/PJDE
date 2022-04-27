@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'paybooc-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.pjWraper{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.filebox{
+    margin-left: 700px;
+}
+
+.inputPj{
+    text-align: center;
+}
+.inputPj input{
+    font-family: paybooc-Bold;
+    width: 960px;
+    height: 50px;
+    margin-top: 10px;
+    font-size: 13pt;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#select{
+    width: 961px;
+    margin-top: 20px;
+}
+
+#btn{
+    width: 1008px;
+    height: 50px;
+    
+    border: 1px solid black;
+}
