@@ -1,0 +1,119 @@
+@font-face {
+    font-family: 'paybooc-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'paybooc-ExtraBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-ExtraBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    box-sizing: border-box;
+    width: 100vw;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+#frame{
+    font-family: 'paybooc-Bold';
+    width: 1000px;
+    border: solid 1px black;
+    padding-bottom: 30px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+#calender_head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 35px 30px 35px;
+}
+#month{
+    display: flex;
+    align-items: center;
+}
+table {
+    width: 930px;
+    border: solid 1px rgb(167, 166, 166);
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-size: 16px;
+}
+th {
+    width: 70px;
+    background-color:  white;
+}
+td {
+    height: 90px;
+    vertical-align : top;
+    background-color: white;
+}
+td button{
+    font-size: 20px;
+    height: 90px;
+    width: 72.9px;
+    padding-right: 130px;
+    padding-bottom: 50px;
+    border: none;
+    background-color: white;
+}
+input {
+    border: none;
+    background-color:  white;
+    font-size: 20px;
+}
+.mon{
+    font-family: 'paybooc-ExtraBold';
+    font-size: 60px;
+    margin-right: 10px;
+}
+.colToday{
+    box-shadow: 0 0 0 1px red inset;
+}
+
+#myDetails{
+    width: 1000px;
+    border: 1px solid black;
+    margin: 0 auto;
+    margin-top: 40px;
+    background-color: #798FBA;
+}
+
+#date{
+    display: flex;
+    justify-content: space-between;
+}
+
+.summary{
+    height: 42px;
+    font-size: 20px;
+    margin-top: 18px;
+    margin-left: 20px;
+    color: white;
+}
+
+#myDetails p{
+    border: 1px solid black;
+    height: 42px;
+    width: 980px;
+    font-size: 20px;
+    margin: 0;
+    position: relative;
+    right: 1px;
+    padding-top: 18px;
+    padding-left: 20px;
+    margin-bottom: -1px;
+    background-color: white;
+}
+
+#date button{
+    background-color: #798FBA;
+    border: 0px;
+    color: white;
+    font-size: 20px;
+    margin-right: 10px;
+}
