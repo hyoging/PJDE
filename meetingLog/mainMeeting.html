@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../header/headerStyle.css" />
+    <link rel="stylesheet" href="../footer/footerStyle.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../img/logo.png">
+    <title>회의록</title>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">   
+      $(document).ready( function() {
+
+      $("#top").load("../header/header.html");  
+      $("#mid").load("./meetingLogMain.html");
+      $("#bottom").load("../footer/footer.html"); 
+
+      });
+      
+      function clickSetting(){
+            var x = document.getElementById("setting");
+            if(x.style.visibility === "visible"){
+                x.style.visibility = "hidden";
+            }else{
+                x.style.visibility = "visible";
+            }
+        }
+    </script>
+    <style>
+        body{
+            width: 100vw;
+        }
+        .mid{
+            margin-right: 20px;
+        }
+        #setting{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0px;
+            display: flex;
+            visibility: hidden;
+        }
+
+        #background{
+            background-color: black;
+            opacity: 50%;
+            width: 80%;
+            height: 100%;
+        }
+
+        #menu{
+            background-color: white;
+            width: 20%;
+            height: 100%;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        #menu button{
+            float: right;
+            position: fixed;
+            right: 0px;
+            top: 14px;
+        }
+
+        button{
+            background-color: white;
+            border: 0px;
+        }
+        #profile{
+            display: flex;
+            margin-top: 50px;
+            align-items: center;
+        }
+        #id_name{
+            display: block;
+            margin-left: 10px;
+        }
+        #name{
+            font-size: 13pt;
+            margin-bottom: 3px;
+        }
+        #id{
+            font-size: 11pt;
+            color: gray;
+        }
+        #profile img{
+            border-radius: 50%;
+            background-color: black;
+        }
+        #menu p{
+            font-size: 18px;
+            padding-left: 8px;
+            padding-right: 8px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class = top id="top"></div>
+        <div class = mid id="mid"></div>
+        <div class = bottom id ="bottom"></div>
+    </div>
+    <div id="setting">
+        <div id="background"></div>
+        <div id="menu">
+            <div id="profile">
+                <img src="/img/logo.png" style="height: 60px; width: 60px;"/>
+                <div id="id_name" style="width: 100px;">
+                    <div id="name">이름</div>
+                    <div id="id">아이디</div>
+                </div>
+            </div> 
+            <button onclick="clickSetting()"><img src="/img/menu_img.png" style="height: 40px; width: 40px;"/></button>
+            <div style="margin-top: 50px;">
+                <p>NEW 공지</p>
+                <hr>
+            </div>
+            <div>
+                <p>프젝명 수정</p>
+                <p>프젝 삭제</p>
+                <p>멤버 수정</p>
+                <hr>
+            </div>
+            <div>
+                <p>로그아웃</p>
+                <p>회원 탈퇴</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
