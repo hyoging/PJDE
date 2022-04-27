@@ -74,11 +74,11 @@
                     day = i.toString().length < 2? '0' + i : i
                     if (plusDate==0) {
                         $("#calendar tbody:last").append("<tr></tr>");
-                        $("#calendar tbody:last").append("<td class='date'><button value=" + day + " style='color: red;' onclick='ButtonClick(this.value)'>"+ day +"</button></td>");
+                        $("#calendar tbody:last").append("<td class='date'><button class='btn' value=" + day + " style='color: red;' onclick='ButtonClick(this.value)'>"+ day +"</button></td>");
                     }else if(plusDate==6){
-                        $("#calendar tbody:last").append("<td class='date'><button value=" + day + " style='color: blue;' onclick='ButtonClick(this.value)'>"+ day +"</button></td>");
+                        $("#calendar tbody:last").append("<td class='date'><button class='btn' value=" + day + " style='color: blue;' onclick='ButtonClick(this.value)'>"+ day +"</button></td>");
                     }else{
-                        $("#calendar tbody:last").append("<td class='date'><button value=" + day + " onclick='ButtonClick(this.value)'>"+ day +"</button></td>");
+                        $("#calendar tbody:last").append("<td class='date'><button class='btn' value=" + day + " onclick='ButtonClick(this.value)'>"+ day +"</button></td>");
                     }
                     
                     
@@ -102,6 +102,11 @@
         })
         function ButtonClick(value){
             $(".summary").text(((nowMonth+1).toString().length < 2? '0' + (nowMonth+1) : (nowMonth+1)) + '.' + ((value).toString().length < 2? '0' + (value) : (value)) + ' 일정');
+            for(i = 1; i <= lastDate; i++){
+                $(".date").eq(i).removeClass('active');
+            }
+            $(".date").eq(value - 1).addClass('active');
+            
         }
     </script>
     <style>
@@ -174,6 +179,9 @@
             padding-right: 8px;
             margin-top: 15px;
             margin-bottom: 15px;
+        }
+        .active{
+            background-color: gray;
         }
     </style>
 </head>
