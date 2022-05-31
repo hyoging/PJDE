@@ -33,24 +33,6 @@ header {
   margin-bottom: 30px;
 }
 
-.searchBtn {
-  width: 120px;
-  height: 35px;
-  margin-right: 10px;
-  border: 1px solid rgb(255, 255, 255);
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.searchBtn:nth-child(3) {
-  margin-right: 0px;
-}
-
-.searchBtn:hover {
-  border: 2px solid rgb(255, 255, 255);
-}
-
 .addBox {
   width: 750px;
   height: 70px;
@@ -101,9 +83,11 @@ header {
   overflow: auto;
   font-size: 20px;
   margin-left: 25px;
+  
 }
 .listBox{
   width: 770px;
+  color: rgb(88, 87, 87);
 }
 
 /* 스크롤바 숨기기 */
@@ -157,6 +141,7 @@ input[type="checkbox"]:checked {
   display: flex;
   justify-content: space-between;
   width: 800px;
+  margin-top: 20px;
 }
 
 .allSelect_lb {

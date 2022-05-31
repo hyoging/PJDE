@@ -65,9 +65,10 @@ function addList() {
         // 텍스트 미입력시 경고 메시지 출력할 <div> 요소생성
         let noticeEl = document.createElement('div')
         noticeEl.setAttribute('class', 'notice')
-        noticeEl.innerHTML = '<span>&nbsp&nbsp&nbsp&nbsp&nbsp * 내용을 입력해주세요</span>'
+        noticeEl.innerHTML = '<span>&nbsp&nbsp&nbsp&nbsp * 내용을 입력해주세요</span>'
 
         addTxt.style.borderBottom = '1px solid rgb(201, 65, 65)'
+        noticeEl.style.fontSize = '14px'
         
 
         if(document.querySelector('.notice')) {
@@ -166,37 +167,6 @@ afterBtn.addEventListener('click', function() {
 
 })
 
-// 조회 건수
-function listCount() {
-
-    let beforeArray = [];
-    let afterArray = [];
-
-    // 전체
-    listEls = document.querySelectorAll('.list')
-
-    for(let i=0; i<listEls.length; i++) {   // listCheck로 받으려면 재할당 명시해줘야함
-        
-        if(listCheck[i].checked == false) {
-            // 진행중
-            beforeArray.push(listEls[i])        
-        }  else {
-            // 완료
-            afterArray.push(listEls[i])
-        }
-    }
-    
-    let beforeCount = beforeArray.length
-    let afterCount = afterArray.length
-    let allCount = beforeCount + afterCount
-
-    allBtn.value = '전체 : ' + allCount
-    beforeBtn.value =  '진행중 : ' + beforeCount 
-    afterBtn.value = '완료 : ' + afterCount
-
-}
-
-
 
 
 // 전체선택
@@ -210,6 +180,7 @@ allSelect.addEventListener('click', function() {
         for(let i=0; i<listCheck.length; i++) {
             listCheck[i].checked = true;
             listLb[i].style.textDecoration = "line-through"
+            listLb[i].style.textDecorationColor = "red"
         }
 
     } else {    // 전체선택 해제
