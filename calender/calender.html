@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/header/headerStyle.css" />
-    <link rel="stylesheet" href="/calender/calenderStyle.css" />
-    <link rel="stylesheet" href="/footer/footerStyle.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="/img/logo.png">
+    <link rel="stylesheet" href="header/headerStyle.css" />
+    <link rel="stylesheet" href="calender/calenderStyle.css" />
+    <link rel="stylesheet" href="footer/footerStyle.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="img/logo.png">
     <title>캘린더</title>
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript">  
         $(document).ready( function() {
 
-        $("#top").load("/header/header.html");  
-        $("#bottom").load("/footer/footer.html");
+        $("#top").load("header/header.html");  
+        $("#bottom").load("footer/footer.html");
         });
         function clickSetting(){
                 var x = document.getElementById("setting");
@@ -220,7 +220,7 @@
             <div id="myDetails">
                 <div id="date">
                     <div class="summary"></div>
-                    <button><a href="/calender/addScheduleMain.html">+</a></button>
+                    <button><a href="calender/addScheduleMain.html">+</a></button>
                 </div>
                 <p>메롱</p>
                 <p>안녕</p>
@@ -234,13 +234,13 @@
         <div id="background"></div>
         <div id="menu">
             <div id="profile">
-                <img src="/img/logo.png" style="height: 60px; width: 60px;"/>
+                <img src="img/logo.png" style="height: 60px; width: 60px;"/>
                 <div id="id_name" style="width: 100px;">
                     <div id="name">이름</div>
                     <div id="id">아이디</div>
                 </div>
             </div> 
-            <button id="btn" onclick="clickSetting()"><img src="/img/menu_img.png" style="height: 40px; width: 40px;"/></button>
+            <button id="btn" onclick="clickSetting()"><img src="img/menu_img.png" style="height: 40px; width: 40px;"/></button>
             <!-- <div style="margin-top: 50px;">
                 <p>NEW 공지</p>
                 <hr>
