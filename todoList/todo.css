@@ -162,4 +162,17 @@ input[type="checkbox"]:checked {
 .allDel:hover {
   color: rgb(75, 74, 74);
 }
-
+.addTodo{
+  border:none;
+  background-color: transparent;
+  font-size: 25px;
+  color: rgb(65, 65, 65);
+  cursor: pointer;
+  font-size: 30px;
+  /* float: right;   */
+  position: fixed;
+  bottom: 200px;
+  right: 200px;
+  background-color: #798FBA;
+  border-radius: 50px;
+}
