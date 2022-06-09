@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/public/assets/img/logo2.png"
+    />
+    <link rel="stylesheet" href="/public/assets/css/addSchedule.css" />
+    <title>공지사항 추가</title>
+  </head>
+  <body>
+    <nav class="pjWraper">
+      <div class="inputPj">
+        <input type="text" placeholder="일정 입력" /><br />
+        <input type="date" id="select" name="select" value="" /><br />
+        <a href="calender.html"
+          ><input
+            id="btn"
+            type="button"
+            value="완료"
+            style="
+              background-color: #798fba;
+              margin-top: 100px;
+              font-size: 15pt;
+              color: white;
+            "
+        /></a>
+      </div>
+    </nav>
+  </body>
+  <script>
+    let today = new Date();
+
+    let year = today.getFullYear();
+    let month = today.getMonth() + 1;
+    let date = today.getDate();
+
+    month = month.toString().length < 2 ? "0" + month : month;
+    date = date.toString().length < 2 ? "0" + date : date;
+
+    var select = document.getElementById("select");
+    select.value = year + "-" + month + "-" + date;
+  </script>
+</html>
