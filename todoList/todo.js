@@ -12,6 +12,7 @@ let allDel = document.querySelector('.allDel')
 let allSelect = document.querySelector('.allSelect')
 
 
+
 // 리스트 추가1 - 'enter'버튼으로 추가하기
 addTxt.addEventListener('keyup', function(e) {
 
@@ -207,3 +208,4 @@ allDel.addEventListener('click', function() {
     listCount()
 
 })
+
