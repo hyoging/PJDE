@@ -1,78 +1,78 @@
 @font-face {
-    font-family: 'paybooc-Bold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'paybooc-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
-  font-family: paybooc-Bold;
-  box-sizing: border-box;
-  width: 100vw;
-  margin: 0;
-  overflow-x: hidden;
+font-family: paybooc-Bold;
+box-sizing: border-box;
+width: 100vw;
+margin: 0;
+overflow-x: hidden;
 }
 
 .to-right-underline{
-  position: relative;
+position: relative;
 }
 .to-right-underline:after{
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 0px;
-  height: 2px;
-  margin: 5px 0 0;
-  transition: all 0.2s ease-in-out;
-  transition-duration: 0.3s;
-  opacity: 0;
+content: "";
+position: absolute;
+left: 0;
+bottom: -3px;
+width: 0px;
+height: 2px;
+margin: 5px 0 0;
+transition: all 0.2s ease-in-out;
+transition-duration: 0.3s;
+opacity: 0;
 }
 .to-right-underline:hover:after{
-  width: 100%;
-  opacity: 1;
+width: 100%;
+opacity: 1;
 }
-  
+
 #footer{
-  text-align: center;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  width: 100%;
-  border-top: 1px solid black;
-  padding-top: 10px;
-  font-size: 11pt;
+text-align: center;
+margin-top: 15px;
+margin-bottom: 15px;
+width: 100%;
+border-top: 1px solid black;
+padding-top: 10px;
+font-size: 11pt;
 }
 
 .col-12{
-  margin-top: 30px;
+margin-top: 30px;
 }
 
 .col-md{
-  display: inline-block;
+display: inline-block;
 }
 
 .row {
-  display: flex;
+display: flex;
 }
 
 a{
-  text-align: center;
-  text-decoration: none;
-  color: var(--text-color);
+text-align: center;
+text-decoration: none;
+color: var(--text-color);
 }
 
 ul{
-  list-style: none;
-  text-align: center;
-  padding: 0%;
+list-style: none;
+text-align: center;
+padding: 0%;
 }
 
 h5{
-  position: relative;
-  margin: 15px;
-  text-align: center;
+position: relative;
+margin: 15px;
+text-align: center;
 }
 
 .col-6{
-  margin-left: 7%;
+margin-left: 7%;
 }
