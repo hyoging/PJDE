@@ -4,20 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/public/assets/css/headerStyle.css" />
-    <link rel="stylesheet" href="/public/assets/css/footerStyle.css" />
+    <link rel="stylesheet" href="css/headerStyle.css" />
+    <link rel="stylesheet" href="css/footerStyle.css" />
     <link
       rel="shortcut icon"
       type="image/x-icon"
-      href="/public/assets/img/logo.png"
+      href="img/logo.png"
     />
-    <title>회의록</title>
+    <title>공지사항</title>
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function () {
-        $("#top").load("../header/header.html");
-        $("#mid").load("../meetingLog/addmeetingLog.html");
-        $("#bottom").load("../footer/footer.html");
+        $("#top").load("header.html");
+        $("#mid").load("addNotice.html");
+        $("#bottom").load("footer.html");
       });
 
       function clickSetting() {
@@ -62,9 +62,9 @@
 
       #menu button {
         float: right;
-        position: fixed;
-        right: 0px;
-        top: 14px;
+        position: relative;
+        bottom: 96px;
+        left: 3px;
       }
 
       button {
@@ -111,14 +111,20 @@
       <div id="background"></div>
       <div id="menu">
         <div id="profile">
-          <img src="img/logo.png" style="height: 60px; width: 60px" />
+          <img
+            src="img/logo.png"
+            style="height: 60px; width: 60px"
+          />
           <div id="id_name" style="width: 100px">
             <div id="name">이름</div>
             <div id="id">아이디</div>
           </div>
         </div>
         <button onclick="clickSetting()">
-          <img src="img/menu_img.png" style="height: 40px; width: 40px" />
+          <img
+            src="img/menu_img.png"
+            style="height: 40px; width: 40px"
+          />
         </button>
         <!-- <div style="margin-top: 50px;">
                 <p>NEW 공지</p>
