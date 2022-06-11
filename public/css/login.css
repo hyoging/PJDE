@@ -22,9 +22,13 @@
     justify-content: center;
 }
 .btn{
-    width:315px;
+    width:25px;
+    height: 100px;
+    float: left;
     margin:auto;
-    display:block;
+    margin-left: 400px;
+    display:flex;
     background-color: rgba(255,255,255,0.5);
     border: 0;
+    
 }
