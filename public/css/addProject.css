@@ -155,7 +155,7 @@ border-color: #798FBA;
 /* 색 변경 스타일*/
 #colChoice {
   margin-top: 20px;
-  margin-left: 70.5%;
+  margin-left: 69.9%;
   font-family: paybooc-Bold;
   width: fit-content;
   height: fit-content;
@@ -166,4 +166,5 @@ border-color: #798FBA;
   color: #fff;
   background-color: #798FBA;
   border-color: #798FBA;
+  margin-left: 10px;
 }
