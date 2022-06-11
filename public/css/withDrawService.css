@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'paybooc-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'InfinitySans-BoldA1';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-BoldA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    font-family: InfinitySans-BoldA1;
+    position: fixed;
+
+}
+#box{
+    border: solid 1px #798FBA;
+    text-align: center;
+    width: 710px;
+    height: 200px;
+    margin-top: 100px;
+    margin-left: 600px;
+    font-size: 40px;
+}
+p{
+    color: rgb(0, 0, 0);
+    
+}
+#button{
+    /* text-decoration: none; */
+     width:100px;
+     margin: 600px;
+     margin-top: 70px;
+     display:block;
+     width: 700px;
+     height: 60px;
+     background-color: #798FBA;
+     font-size: 25px;
+     color: white;
+     border: none;
+}
+a{
+    text-decoration: none;
+}
