@@ -23,11 +23,18 @@
 .inputPj{
   text-align: center;
 }
-.inputPj input{
+.inputPj #item{
   font-family: paybooc-Bold;
   width: 1000px;
   height: 50px;
   margin-top: 20px;
+  font-size: 11pt;
+}
+
+.inputPj #title{
+  font-family: paybooc-Bold;
+  width: 1000px;
+  height: 50px;
   font-size: 11pt;
 }
 
@@ -48,9 +55,6 @@ margin: 0%;
 .inputPj form{
 margin-left: 920px;
 }
-
-
-
 
 /* body {margin: 10px;} */
 .where {
@@ -146,4 +150,20 @@ border-color: #798FBA;
   height: 50px;
   margin-top: 20px;
   font-size: 11pt;
+}
+
+/* 색 변경 스타일*/
+#colChoice {
+  margin-top: 20px;
+  margin-left: 70.5%;
+  font-family: paybooc-Bold;
+  width: fit-content;
+  height: fit-content;
+  font-size: 11pt;
+}
+
+#colChoice button{
+  color: #fff;
+  background-color: #798FBA;
+  border-color: #798FBA;
 }

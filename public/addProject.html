@@ -15,33 +15,21 @@
     <title>프젝돔이</title>
   </head>
   <body>
+    <div id = "colChoice">
+      <input type="color" id="selectColor" title="클릭 시 색을 설정할 수 있습니다.">
+      <button onclick="colorChange();" title="색을 선택 후 클릭해 주세요.">색 변경</button>
+    </div>
     <nav class="pjWraper">
-      <div class="filebox bs3-primary">
-        <input
-          class="upload-name"
-          value="파일선택"
-          disabled="disabled"
-          style="width: 200px; margin-top: 40px; margin-bottom: 10px"
-        />
-
-        <label for="input_file" style="margin-top: 40px; margin-bottom: 10px"
-          >업로드</label
-        >
-        <input type="file" id="input_file" class="upload-hidden" />
-      </div>
-
       <div class="inputPj">
-        <input type="text" placeholder="프로젝트 명" /> <br />
-        <input type="text" placeholder=" 멤버 이름" /> <br />
+        <input id = "title" type="text" placeholder="프로젝트 명" /> <br />
+        <input id = "item" type="text" placeholder=" 멤버 이메일" /> <br />
         <div id="parah"></div>
         <form method="post" action="test.jsp">
           <input type="button" value="+ 멤버추가" onclick="addInput();" /><br />
           <input type="button" value="- 멤버삭제" onclick="deleteInput();" />
         </form>
         <a href="main.html"
-          ><input
-            type="button"
-            value="완료"
+          ><input id = "item" type='button' value='완료'  onclick=''
             style="
               background-color: #798fba;
               margin-top: 100px;
