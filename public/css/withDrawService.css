@@ -19,12 +19,13 @@ body{
 #box{
     border: solid 1px #798FBA;
     text-align: center;
-    width: 710px;
+    width: 750px;
     height: 200px;
     margin-top: 100px;
     margin-left: 600px;
     font-size: 40px;
 }
+
 p{
     color: rgb(0, 0, 0);
     
