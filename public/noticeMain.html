@@ -111,34 +111,25 @@
       <div id="background"></div>
       <div id="menu">
         <div id="profile">
-          <img
-            src="img/logo.png"
-            style="height: 60px; width: 60px"
-          />
           <div id="id_name" style="width: 100px">
             <div id="name">이름</div>
             <div id="id">아이디</div>
           </div>
         </div>
         <button onclick="clickSetting()">
-          <img
-            src="img/menu_img.png"
-            style="height: 40px; width: 40px"
-          />
+          <img src="img/menu_img.png" style="height: 40px; width: 40px" />
         </button>
         <!-- <div style="margin-top: 50px;">
                 <p>NEW 공지</p>
                 <hr>
             </div> -->
         <div style="margin-top: 50px">
-          <p>프젝명 수정</p>
-          <p>프젝 삭제</p>
-          <p>멤버 수정</p>
+          <p><a href="./editProject.html">프로젝트 수정 및 삭제</a></p>
           <hr />
         </div>
         <div>
-          <p>로그아웃</p>
-          <p>회원 탈퇴</p>
+          <p><a href="./login.html" onclick="return confirm('로그아웃 하시겠습니까?');">로그아웃</a></p>
+          <p><a href="./withDrawService.html">회원 탈퇴</p></a>
         </div>
       </div>
     </div>
