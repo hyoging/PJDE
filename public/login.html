@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="img/logo2.png"
-    />
-    <title>프젝돔이</title>
-    <link rel="stylesheet" href="css/login.css" />
-    <ul>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="img/logo2.png" />
+  <title>프젝돔이</title>
+  <link rel="stylesheet" href="css/login.css" />
+  <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js"
+  charset="utf-8"></script>
+
+  <!-- <ul>
       <li>
-          <!-- 아래와같이 아이디를 꼭 써준다. -->
-          <a id="naverIdLogin_loginButton" href="javascript:void(0)">
+          <! 아래와같이 아이디를 꼭 써준다. -->
+  <!--<a id="naverIdLogin_loginButton" href="javascript:void(0)">
             <img src="img/naver.png" style="width: 300px" 
           />
         </a>
@@ -27,8 +27,8 @@
       </li>
     </ul>
     
-    <!-- 네이버 스크립트 -->
-    <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
+    <! 네이버 스크립트 -->
+  <!--<script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
     
     <script>
     
@@ -79,8 +79,8 @@
       
     }
     </script>
-    <!--카카오 스크립트-->
-    <ul>
+    <!카카오 스크립트-->
+  <!--<ul>
       <li onclick="kakaoLogin();">
           <a href="javascript:void(0)">
             <img src="img/kakao.png" style="width: 300px" 
@@ -114,6 +114,7 @@
           fail: function (error) {
             console.log(error)
           },
+
         })
       }
     //카카오로그아웃  
@@ -131,42 +132,35 @@
           Kakao.Auth.setAccessToken(undefined)
         }
       }  
-    </script>
-  </head>
-  <body>
-    <div class="mid">
-      <div class="logo">
-        <img
-          src="img/logo.png"
-          style="width: 450px; height: 450px; margin-top: 20px"
-        />
-      </div>
-      <div class="info" style="font-size: 15pt">
-        <h1 style="margin-top: 0%; margin-bottom: 50px">
-          이제는 기록으로 함께 프젝돔이
-        </h1>
-      </div>
-      <div class="login_btn">
-        <button type="submit" class="btn"
-        ><a href="main.html"><img src="img/google.png" style="width: 250px"/></a>
-        </button>
-       
-        <button type="submit" class="btn"
-        ><a href="main.html"><img src="img/kakao.png" style="width: 250px"/></a>
-        </button>
-<<<<<<< HEAD
-        <p></p>
-        <button type="submit" class="btn">
-          <a id="naverIdLogin_loginButton" href="javascript:void(0)">
-            <img src="img/naver.png" style="width: 300px"
-          /></a>
-=======
-        
-        <button type="submit" class="btn"
-        ><a href="main.html"><img src="img/naver.png" style="width: 250px"/></a>
->>>>>>> b307e0276f24db88bf2e5e8eb8d34cadb7b64416
-        </button>
-      </div>
+    </script> -->
+</head>
+
+<body>
+  <div class="mid">
+    <div class="logo">
+      <img src="img/logo.png" style="width: 450px; height: 450px; margin-top: 20px" />
     </div>
-  </body>
+    <div class="info" style="font-size: 15pt">
+      <h1 style="margin-top: 0%; margin-bottom: 50px">
+        이제는 기록으로 함께 프젝돔이
+      </h1>
+    </div>
+    <div class="login_btn">
+      <button type="submit" class="btn"><a href="main.html"><img src="img/google.png" style="width: 250px" /></a>
+      </button>
+
+      <button type="submit" class="btn"><a href="main.html"><img src="img/kakao.png" style="width: 250px" /></a>
+      </button>
+      <p></p>
+  
+      <button type="submit" class="btn">  
+          <a id="naverIdLogin_loginButton" href="javascript:void(0)">
+          <a href="main.html"><img src="img/naver.png" style="width: 250px" /></a>
+        
+      </button>
+      
+    </div>
+  </div>
+</body>
+
 </html>
