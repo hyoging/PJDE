@@ -8,31 +8,15 @@
 .project{
     font-family: paybooc-Bold;
 }
-.img{
-    border-radius: 20px 20px 0px 0px;
-    
-}
-#img{
-    width: 410px; 
-    height: 200px; 
-    object-fit: cover;
-    border-radius: 20px 20px 0px 0px;
-}
 .info{
+    color: rgb(230, 227, 227);
+} 
+
+.pj{
     background-color: #798FBA;
     width: 410px;
-    height: 110px;
-    display: table;
-    display: table-cell; vertical-align: middle;
-    color: rgb(230, 227, 227);
-    border-radius: 0px 0px 20px 20px;
-}
-.title{
-    margin-bottom: 0%;
-}
-.pj{
     height: 310px;
-    border: solid 1px #798FBA;
+    border: solid 1px rgb(230, 227, 227);
     margin-top: 40px;
     margin-right: 20px;
     display: inline-block;
@@ -40,6 +24,8 @@
 }
 .column{
     text-align: center;
+    
+
 }
 .addButton{
     width: 50px;
