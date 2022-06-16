@@ -9,19 +9,26 @@
     font-family: paybooc-Bold;
 }
 .info{
-    color: rgb(230, 227, 227);
+    color: rgb(255, 255, 255);
 } 
 
 .pj{
     background-color: #798FBA;
     width: 410px;
     height: 310px;
-    border: solid 1px rgb(230, 227, 227);
+    border: solid 1px rgb(0, 0, 0);
     margin-top: 40px;
     margin-right: 20px;
     display: inline-block;
     border-radius: 20px;
 }
+.pj > a > h2{
+    margin-top: 100px;
+}
+.pj > a > p{
+    margin-top: 30px;
+}
+
 .column{
     text-align: center;
     
