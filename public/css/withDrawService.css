@@ -13,7 +13,8 @@
 }
 body{
     font-family: InfinitySans-BoldA1;
-    position: fixed;
+    position: absolute;
+
 
 }
 #box{
@@ -36,12 +37,16 @@ p{
      margin: 600px;
      margin-top: 70px;
      display:block;
-     width: 700px;
+     width: 750px;
      height: 60px;
      background-color: #798FBA;
      font-size: 25px;
      color: white;
      border: none;
+}
+#button:hover{
+    background-color: rgb(223, 21, 21);
+    color: white;
 }
 a{
     text-decoration: none;
