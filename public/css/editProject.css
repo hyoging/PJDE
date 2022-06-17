@@ -11,6 +11,9 @@
     font-weight: normal;
     font-style: normal;
 }
+body{
+  margin-top: 80px;
+}
 .pjWraper{
     margin-top: 15px;
     margin-bottom: 30px;
@@ -146,4 +149,20 @@
     height: 50px;
     margin-top: 20px;
     font-size: 11pt;
+}
+/* 색 변경 스타일*/
+#colChoice {
+  margin-top: 20px;
+  margin-left: 69.9%;
+  font-family: paybooc-Bold;
+  width: fit-content;
+  height: fit-content;
+  font-size: 11pt;
+}
+
+#colChoice button{
+  color: #fff;
+  background-color: #798FBA;
+  border-color: #798FBA;
+  margin-left: 10px;
 }

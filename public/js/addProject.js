@@ -5,7 +5,7 @@ function colorChange(){
     // document.getElementById("div1").style.backgroundColor = color;
 
     var color = document.getElementById("selectColor");
-    var div = document.getElementById("div1");
+    var div = document.getElementById("pj");
 
     console.log(selectColor);
     console.log(selectColor.value);
