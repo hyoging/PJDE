@@ -7,21 +7,30 @@
 .top{
     width: 100%;
     text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    min-height: 574px;
 }
 .log{
     display: inline-block;
     width: 1000px;
-    height: 160px;
     margin-top: 50px;
     text-align: left;
-    border: solid 1px #798FBA;
+    border: solid 2px #798FBA;
     font-family: InfinitySans-RegularA1;
+    padding: 20px;
+}
+
+.log img{
+    margin-left: 5px;
+    margin-top: 3px;
 }
 
 .title{
     font-size: 25px;
     font-style: bold;
-    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .edit{
     width: 30px;
@@ -29,13 +38,37 @@
     position: absolute;
 }
 .name{
-    margin-left: 10px;
-    font-size: 18px;
+    color: rgb(140, 137, 137);
+    font-size: 15px;
 }
 .date{
-    margin-left: 10px;
-    color: rgb(180, 179, 179);
+    color: rgb(140, 137, 137);
     font-size: 15px;
+}
+.sep{
+    margin-left: 5px;
+    margin-right: 5px;
+    color: rgb(140, 137, 137);
+    font-size: 15px;
+}
+
+.name_date{
+    height: 30px;
+}
+
+.log hr{
+    border: 1px;
+    height: 1px;
+    color: #bec4d0;
+    border-color: #bec4d0;
+    background-color: #bec4d0;
+}
+
+.content{
+    font-size: 18px;
+    margin: 10px;
+    margin-top: 25px;
+    margin-bottom: 15px;
 }
 .add{
     width: 50px;
@@ -45,4 +78,10 @@
     position: fixed;
     bottom: 20px;
     right: 60px;
+}
+
+#empty{
+    text-align: center;
+    position: relative;
+    top: 240px;
 }

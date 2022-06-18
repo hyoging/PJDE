@@ -28,8 +28,9 @@ a{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 12px;
+    padding: 8px 12px;
     border-bottom: 1px solid black;
+    height: 65px;
 }
 
 .logo{
@@ -40,6 +41,19 @@ a{
     font-size: 30pt;
     margin: 10px;
 }
+
+.logo a{
+    margin-bottom: 14px;
+}
 .notice_icon{
     margin-right: 40px;
+}
+
+.img{
+    position:relative;
+    top: 12px;
+}
+.pjde{
+    position:relative;
+    bottom: 3px;
 }

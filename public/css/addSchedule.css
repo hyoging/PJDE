@@ -9,6 +9,7 @@
     margin-top: 20px;
     margin-bottom: 30px;
     text-align: center;
+    min-height: 544px;
 }
 .filebox{
     margin-left: 700px;
@@ -16,7 +17,10 @@
 
 .inputPj{
     text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
+
 .inputPj input{
     font-family: paybooc-Bold;
     width: 960px;
@@ -32,9 +36,7 @@
     margin-top: 20px;
 }
 
-#btn{
+#button{
     width: 1008px;
     height: 50px;
-    
-    border: 1px solid black;
 }

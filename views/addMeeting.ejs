@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#content').on('keyup', function() {
+                $('#test_cnt').html("("+$(this).val().length+" / 500)");
+        
+                if($(this).val().length > 500) {
+                    $(this).val($(this).val().substring(0, 500));
+                    $('#test_cnt').html("(500 / 500)");
+                }
+            });
+        });
+
+    </script>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/img/logo2.png"
+    />
+    <link rel="stylesheet" href="/css/addMeeting.css" />
+    <link rel="stylesheet" href="/css/headerStyle.css" />
+    <link rel="stylesheet" href="/css/footerStyle.css" />
+    <title>공지사항 추가</title>
+  </head>
+  <body>
+    <nav class="header">
+        <div class="logo">
+          <img
+            src="/img/logo2.png"
+            style="height: 50px; width: 50px"
+          />
+          <span><a href="../../../main">프젝돔이</a></span>
+        </div>
+  
+        <div class="headermenu" style="text-align: center">
+            <span><a href="../../../main">내 프젝</a></span>
+            <span><a href="../calender">캘린더</a></span>
+            <span><a href="../meeting">회의록</a></span>
+            <span><a href="">TODO</a></span>
+            <span><a href="../notice">공지사항</a></span>
+          </div>
+        <div class="setting_menu">
+            <img
+            src="/img/fake.png"
+            style="height: 40px; width: 40px"
+          />
+        </div>
+      </nav>
+      <div class="top">
+        <form method="get" action="addMeeting/addMeet">
+            <input type="text" id="title" name="title" placeholder="회의 주제를 입력하세요" /><br />
+            <textarea id="content" name="content" placeholder="내용을 입력하세요" cols="32" rows="16"></textarea>
+            <div id="test_cnt">(0 / 500)</div>
+            <input type="submit" value="저장" id="button">
+        </form>
+      </div>
+    <div id="footer">
+        <div class="col-12 col-md">
+          <img
+            src="/img/logo2.png"
+            style="height: 70px; width: 70px"
+          />
+          <br />
+          <small class="d-block mb-3"
+            >&copy;2022 <br /><a
+              class="link-secondary"
+              href="https://github.com/hyoging/PJDE"
+              target="_blank"
+              >PJDE</a
+            ></small
+          >
+        </div>
+  
+        <div class="col-6 col-md">
+          <h5>Name</h5>
+          <ul class="list-unstyled">
+            <li><a class="link-secondary">고에스더</a></li>
+            <li><a class="link-secondary">김효진</a></li>
+            <li><a class="link-secondary">송은원</a></li>
+            <li><a class="link-secondary">이지민</a></li>
+            <li><a class="link-secondary">조나현</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-6 col-md">
+          <h5>Github</h5>
+          <ul class="list-unstyled">
+            <li>
+              <a
+                class="link-secondary"
+                href="https://github.com/koesther0528"
+                target="_blank"
+                ><span class="to-right-underline">koesther0528</span></a
+              >
+            </li>
+            <li>
+              <a
+                class="link-secondary"
+                href="https://github.com/hyoging"
+                target="_blank"
+                ><span class="to-right-underline">hyoging</span></a
+              >
+            </li>
+            <li>
+              <a
+                class="link-secondary"
+                href="https://github.com/plmqazoknijb"
+                target="_blank"
+                ><span class="to-right-underline">plmqazoknijb</span></a
+              >
+            </li>
+            <li>
+              <a
+                class="link-secondary"
+                href="https://github.com/jwimini"
+                target="_blank"
+                ><span class="to-right-underline">jwimini</span></a
+              >
+            </li>
+            <li>
+              <a
+                class="link-secondary"
+                href="https://github.com/c04nh"
+                target="_blank"
+                ><span class="to-right-underline">c04nh</span></a
+              >
+            </li>
+          </ul>
+        </div>
+  
+        <div class="col-6 col-md">
+          <h5>PhoneNumber</h5>
+          <ul class="list-unstyled">
+            <li>
+              <a
+                class="link-secondary line"
+                href="https://www.facebook.com/profile.php?id=100012080979497"
+                target="_blank"
+                ><span class="to-right-underline">010-6316-3948</span></a
+              >
+            </li>
+            <li>
+              <a
+                class="link-secondary line"
+                href="https://www.facebook.com/profile.php?id=100012743581782"
+                target="_blank"
+                ><span class="to-right-underline">010-5358-4934</span></a
+              >
+            </li>
+            <li>
+              <a
+                class="link-secondary line"
+                href="https://www.facebook.com/profile.php?id=100016988671264"
+                target="_blank"
+                ><span class="to-right-underline">010-4472-3701</span></a
+              >
+            </li>
+            <li>
+              <a
+                class="link-secondary line"
+                href="https://www.facebook.com/profile.php?id=100011074187247"
+                target="_blank"
+                ><span class="to-right-underline">010-2162-0709</span></a
+              >
+            </li>
+            <li>
+              <a
+                class="link-secondary line"
+                href="https://www.facebook.com/profile.php?id=100011074187247"
+                target="_blank"
+                ><span class="to-right-underline">010-2657-7498</span></a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Email</h5>
+          <ul class="list-unstyled">
+            <li><a class="link-secondary">w2021@e-mirim.hs.kr</a></li>
+            <li><a class="link-secondary">w2030@e-mirim.hs.kr</a></li>
+            <li><a class="link-secondary">w2033@e-mirim.hs.kr</a></li>
+            <li><a class="link-secondary">w2037@e-mirim.hs.kr</a></li>
+            <li><a class="link-secondary">w2038@e-mirim.hs.kr</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
