@@ -1,0 +1,180 @@
+@font-face {
+    font-family: 'InfinitySans-RegularA1';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  body {
+    font-family: 'InfinitySans-RegularA1';
+  
+  }
+  
+  .inner {
+    width: 800px;
+    padding: 30px;
+    margin: 50px auto;
+    box-sizing: border-box;
+   
+  }
+  
+  header {
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    font-size: 60px;
+    font-weight: 700;
+    color: rgb(121, 143, 186);   
+  }
+  
+  .searchBox {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+  .searchBtn {
+    width: 120px;
+    height: 35px;
+    margin-right: 10px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .searchBtn:nth-child(3) {
+    margin-right: 0px;
+  }
+  
+  .searchBtn:hover {
+    border: 2px solid rgb(255, 255, 255);
+  }
+  
+  .addBox {
+    width: 750px;
+    height: 70px;
+  }
+  
+  .addBox_inner {
+    display: flex;
+    width: 770px;
+    margin-bottom: 5px;
+    margin-top: 30px;
+  }
+  
+  .addTxt{
+    font-family: 'InfinitySans-RegularA1';
+    width: 900px;
+    /* margin-left: 0px; */
+    padding-bottom: 5px;
+    border: none;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    outline: none;
+    color: rgb(46, 46, 46);
+    font-size: 25px;
+    background-color: transparent;
+  }
+  
+  .addBtn {
+    border:none;
+    background-color: transparent;
+    font-size: 25px;
+    color: rgb(65, 65, 65);
+    cursor: pointer;
+    font-size: 25px;
+  }
+  
+  .addBtn:hover {
+    color: rgb(0, 0, 0);
+  }
+  
+  .notice {
+    color: rgb(201, 65, 65);
+    font-size: 11px;
+  }
+  
+  .listBox_inner {
+    width: 100%;
+    height: 280px;
+    margin: 10px 0;
+    overflow: auto;
+    font-size: 20px;
+    margin-left: 25px;
+  }
+  .listBox{
+    width: 770px;
+  }
+  
+  /* 스크롤바 숨기기 */
+  .listBox_inner::-webkit-scrollbar { 
+    display: none;
+  }
+  
+  .list {
+    width: 100%;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    margin-right: 20px;
+    border: 1px solid;
+    outline: 0;
+    cursor: pointer;
+  }
+  
+  input[type="checkbox"]:checked {
+    background-color: #fff;
+  }
+  
+  .listLb {
+    width: 90%;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .delBtn {
+    width: 10%;
+    display: inline-block;
+    text-align: end;
+    border: none;
+    background-color: transparent;
+    outline: 0;
+    font-size: 20px;
+    color: rgb(163, 155, 155);
+    cursor: pointer;
+  }
+  
+  .delBtn:hover {
+    color: rgb(75, 74, 74);
+  }
+  
+  .allCheckBox {
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+  }
+  
+  .allSelect_lb {
+    color: rgb(119 112 112);
+    text-shadow: 1px 1px 1px ghostwhite;
+  }
+  
+  .allSelect_lb:hover {
+    color: rgb(75, 74, 74);
+  }
+  
+  .allDel {
+    color: rgb(119 112 112);
+    text-shadow: 1px 1px 1px ghostwhite;
+    text-decoration: none;
+  }
+  
+  .allDel:hover {
+    color: rgb(75, 74, 74);
+  }
+  

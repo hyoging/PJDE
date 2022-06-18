@@ -23,7 +23,7 @@ const db = mysql.createConnection({
   host     : '127.0.0.1',
   user     : 'root',
   password : 'hyojin0712',
-  database : 'PJDE'
+  database : 'pjde'
 });
 
 db.connect();
@@ -204,6 +204,7 @@ app.get("/create", function(req,res){
     var id2 = req.query.id2;
     var id3 = req.query.id3;
     var id4 = req.query.id4;
+    var progress = req.query.progress;
 
     var today = new Date();
     var year = today.getFullYear();
@@ -244,7 +245,7 @@ app.get("/create", function(req,res){
                                     console.error(err4.message);
                                 }
                                 if(row4.length > 0){
-                                    db.query('insert into project (proId, proName, col, manager, userId1, userId2, userId3, userId4) VALUES("' + proid + '", "' + title + '", "' + color + '", "' + Id + '", "' + id1 + '", "' + id2 + '", "' + id3 + '", "' + id4 + '");');
+                                    db.query('insert into project (proId, proName, col, manager, userId1, userId2, userId3, userId4, progress) VALUES("' + proid + '", "' + title + '", "' + color + '", "' + Id + '", "' + id1 + '", "' + id2 + '", "' + id3 + '", "' + id4 + '", "' + progress + '");');
                                     res.send("<script> window.location.replace('/main');</script>");
                                 }else{
                                     res.send("<script>alert('" + id4 + "는(은) 없는 아이디입니다.'); window.location.replace('/addProject');</script>");
