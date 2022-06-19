@@ -6,13 +6,34 @@
 }
 
 #banner{
-    text-align: center;
     border-bottom: #798FBA 1.5px solid;
     width:100%;
 }
+#new{
+    width: fit-content;
+    margin-right: 10px;
+    font-size: 20pt;
+    
+    color: rgb(255, 68, 68);
+    margin-left: 3%;
+}
 
-#content{
-    align-items: center;
+#banner p{
+    margin-left: 1%;
+}
+.titleNt{
+    font-family: paybooc-Bold;
+    font-size: 15pt;
+    
+}
+.titleNt a{
+    font-size: 25pt;
+}
+.projectNt{
+    font-family: paybooc-Bold;
+    font-size: 14pt;
+   
+    
 }
 
 .project{

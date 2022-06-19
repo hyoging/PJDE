@@ -45,7 +45,7 @@ app.get("/main", function(req,res){
 
     var sql1 = 'select * from project where manager = "' + userId + '" or userId1 = "' + userId + '" or userId2 = "' + userId + '" or userId3 = "' + userId + '" or userId4 = "' + userId + '";';
 
-    var sql2 = 'select * from notice join project where notice.proid = project.proid and (manager = "' + userId + '" or userId1 = "' + userId + '" or userId2 = "' + userId + '" or userId3 = "' + userId + '" or userId4 = "' + userId + '") order by notDate desc;';
+    var sql2 = 'select * from notice join project where notice.proid = project.proid and (manager = "' + userId + '" or userId1 = "' + userId + '" or userId2 = "' + userId + '" or userId3 = "' + userId + '" or userId4 = "' + userId + '") order by notDate asc;';
     
 
     db.query(sql1, function (err, result, fields) {
