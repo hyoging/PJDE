@@ -21,8 +21,8 @@ const { render } = require('express/lib/response')
 
 const db = mysql.createConnection({
   host     : '127.0.0.1',
-  user     : 'root',
-  password : 'hyojin0712',
+  user     : 'PJDE',
+  password : '1234',
   database : 'pjde'
 });
 
@@ -265,3 +265,6 @@ app.get("/create", function(req,res){
     });
 
 })
+app.get("/main/:id/todo", function(req,res){ 
+      res.render('todo');
+ })
