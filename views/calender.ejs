@@ -149,16 +149,6 @@
               $(".date").eq(index).text() == date.getDate()
             ) {
               $(".date").eq(index).addClass("colToday");
-              $(".summary").text(
-                ((nowMonth + 1).toString().length < 2
-                  ? "0" + (nowMonth + 1)
-                  : nowMonth + 1) +
-                  "." +
-                  ((index + 1).toString().length < 2
-                    ? "0" + (index + 1)
-                    : index + 1) +
-                  " 일정"
-              );
             }
           });
         }
@@ -167,19 +157,13 @@
       });
       
       function ButtonClick(value) {
-          var date = nowYear.toString() + "-" + ((nowMonth + 1).toString().length < 2
+        
+        var date = nowYear.toString() + "-" + ((nowMonth + 1).toString().length < 2
             ? "0" + (nowMonth + 1)
             : nowMonth + 1) + "-" + (value.toString().length < 2 ? "0" + value : value);
 
-          localStorage.setItem("date", date);
-        $(".summary").text(
-          ((nowMonth + 1).toString().length < 2
-            ? "0" + (nowMonth + 1)
-            : nowMonth + 1) +
-            "." +
-            (value.toString().length < 2 ? "0" + value : value) +
-            " 일정"
-        );
+        var link = 'calender?date='+date; 
+        location.href=link;
         for (i = 1; i <= lastDate; i++) {
           $(".date").eq(i).removeClass("active");
         }
@@ -278,7 +262,7 @@
           <span><a href="../../main">내 프젝</a></span>
           <span><a href="calender">캘린더</a></span>
           <span><a href="meeting">회의록</a></span>
-          <span><a href="">TODO</a></span>
+          <span><a href="todo">TODO</a></span>
           <span><a href="notice">공지사항</a></span>
         </div>
         <div class="setting_menu">
@@ -289,6 +273,7 @@
         </div>
       </nav>
     <div class="container">
+        <button id="add" title="일정 추가"><a href="calender/addSchedule">+</a></button>
         <div id="frame">
           <div id="calender_head">
             <input name="preMon" type="button" value="<" />
@@ -319,11 +304,10 @@
         <div id="myDetails">
           <div id="date">
               <div id="date1">
-                <div class="summary"></div>
-                <button><a href="calender/addSchedule">+</a></button>
+                <div class="summary"><%= date %></div>
               </div>
               <% for (var i = 0; i < project.length; i++){ %>
-                <p><%= project[i].schDate %>  <%= project[i].schNm %></p>
+                <p><%= project[i].schNm %></p>
               <% } %>
           </div>
         </div>

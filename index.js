@@ -20,11 +20,11 @@ const mysql = require('mysql');
 const { render } = require('express/lib/response')
 
 const db = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : '111111',
-  database : 'pjde01'
-});
+    host     : 'localhost',
+    user     : 'PJDE',
+    password : '1234',
+    database : 'pjde'
+  });
 
 db.connect();
 
@@ -65,13 +65,23 @@ app.get("/main/notice", function(req,res){
 
 app.get("/main/:id/calender", function(req,res){ 
     const id = req.params.id;
+    var date = req.query.date;
 
-    const sql = "SELECT * FROM schedule WHERE proId=?";
-    db.query(sql, id, (err, row)=>{
+    if(date == undefined){
+        var today = new Date();
+        var year = today.getFullYear();
+        var month = ('0' + (today.getMonth() + 1)).slice(-2);
+        var day = ('0' + today.getDate()).slice(-2);
+
+        var date = year + '-' + month  + '-' + day;
+    }
+
+    const sql = "SELECT * FROM schedule WHERE proId='" + id + "' and schDate='" + date + "';";
+    db.query(sql, (err, row)=>{
       if(err) {
         console.error(err.message);
       }
-      res.render('calender', {id: id, project:row});
+      res.render('calender', {id: id, project:row, date:date});
     });
 })
 
@@ -266,3 +276,6 @@ app.get("/create", function(req,res){
     });
 
 })
+app.get("/main/:id/todo", function(req,res){ 
+      res.render('todo');
+ })
