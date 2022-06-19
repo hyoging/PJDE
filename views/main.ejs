@@ -43,10 +43,13 @@
       <% if(notice.length == 0){%>
         <div id = "emptyNotice">공지사항이 없습니다.</div>
       <%}else{%>
-        <p class="titleNt">
-          <a id="new">NEW!</a><%= notice[notice.length-1].content;%>
-        </p>
-        <p class="projectNt" style=" margin-left: 8.5%;">
+        <div id="newImg">
+          <img src="/img/new.png">
+        </div>
+        <div class="titleNt">
+          <%= notice[notice.length-1].content;%>
+        </div>
+        <p class="projectNt">
             <%= notice[notice.length-1].proName;%>
         </p>
       <%}%>

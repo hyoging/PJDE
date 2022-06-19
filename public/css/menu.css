@@ -8,14 +8,15 @@
 #banner{
     border-bottom: #798FBA 1.5px solid;
     width:100%;
-}
-#new{
-    width: fit-content;
-    margin-right: 10px;
-    font-size: 20pt;
     
-    color: rgb(255, 68, 68);
+}
+#newImg{
+    width: 70px;
+    height: 70px; 
+    float:left;
     margin-left: 3%;
+    margin-right: 1%;
+    margin-bottom: 2px;
 }
 
 #banner p{
@@ -24,7 +25,7 @@
 .titleNt{
     font-family: paybooc-Bold;
     font-size: 15pt;
-    
+    margin-top: 20px;
 }
 .titleNt a{
     font-size: 25pt;
