@@ -20,10 +20,10 @@ const mysql = require('mysql');
 const { render } = require('express/lib/response')
 
 const db = mysql.createConnection({
-  host     : '127.0.0.1',
+  host     : 'localhost',
   user     : 'root',
-  password : 'hyojin0712',
-  database : 'pjde'
+  password : '111111',
+  database : 'pjde01'
 });
 
 db.connect();
@@ -36,12 +36,13 @@ app.get('/', function(req,res) {
 
 app.get("/main", function(req,res){ 
     var userId = req.cookies['id'];
+    
 
     var sql = 'select * from project where manager = "' + userId + '" or userId1 = "' + userId + '" or userId2 = "' + userId + '" or userId3 = "' + userId + '" or userId4 = "' + userId + '";';
+    
 
     db.query(sql, function (err, result, fields) {
         if (err) throw err;
-
         res.render('main', {result:result, userId:userId});
     }); 
 })
