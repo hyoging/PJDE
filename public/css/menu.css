@@ -5,6 +5,17 @@
     font-style: normal;
 }
 
+#banner{
+    text-align: center;
+    border-bottom: #798FBA 1.5px solid;
+    height: 50px;
+    width:100%;
+}
+
+#content{
+    align-items: center;
+}
+
 .project{
     font-family: paybooc-Bold;
 }
