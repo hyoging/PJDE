@@ -38,12 +38,17 @@ app.get("/main", function(req,res){
     var userId = req.cookies['id'];
     
 
-    var sql = 'select * from project where manager = "' + userId + '" or userId1 = "' + userId + '" or userId2 = "' + userId + '" or userId3 = "' + userId + '" or userId4 = "' + userId + '";';
+    var sql1 = 'select * from project where manager = "' + userId + '" or userId1 = "' + userId + '" or userId2 = "' + userId + '" or userId3 = "' + userId + '" or userId4 = "' + userId + '";';
+
+    var sql2 = 'select * from notice join project where notice.proid = project.proid and (manager = "' + userId + '" or userId1 = "' + userId + '" or userId2 = "' + userId + '" or userId3 = "' + userId + '" or userId4 = "' + userId + '") order by notDate desc;';
     
 
-    db.query(sql, function (err, result, fields) {
+    db.query(sql1, function (err, result, fields) {
         if (err) throw err;
-        res.render('main', {result:result, userId:userId});
+        db.query(sql2, function (err, notice, fields) {
+            if (err) throw err;
+            res.render('main', {result:result, notice:notice, userId:userId});
+        }); 
     }); 
 })
 

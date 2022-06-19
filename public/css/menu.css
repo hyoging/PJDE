@@ -8,7 +8,6 @@
 #banner{
     text-align: center;
     border-bottom: #798FBA 1.5px solid;
-    height: 50px;
     width:100%;
 }
 
@@ -64,4 +63,38 @@
     text-align: center;
     margin-top: 200px;
     margin-bottom: 200px;
+}
+
+#emptyNotice{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.notice p{
+    margin-left: 20px;
+    font-family: paybooc-Bold;
+    
+}
+.title{
+    font-size: 20px;
+    font-style: bold;
+}
+.name{
+    color: rgb(140, 137, 137);
+    font-size: 15px;
+}
+.date{
+    color: rgb(140, 137, 137);
+    font-size: 15px;
+}
+.sep{
+    margin-left: 5px;
+    margin-right: 5px;
+    color: rgb(140, 137, 137);
+    font-size: 15px;
+}
+
+.name_date{
+    margin-left: 20px;
+    margin-bottom: 20px;
 }

@@ -40,10 +40,20 @@
       </div>
   </nav>
     <div id = banner>
-      <% if(result.length == 0){%>
-        <div id = "empty">공지사항이 없습니다.</div>
+      <% if(notice.length == 0){%>
+        <div id = "emptyNotice">공지사항이 없습니다.</div>
       <%}else{%>
-        
+        <p class="title">
+          <%= notice[0].content;%>
+        </p>
+        <p class="project">
+            <%= notice[0].proName;%>
+        </p>
+        <div class="name_date">
+          <span class="name">작성자: <%= notice[0].userId %></span>
+          <span class="sep">|</span>
+          <span class="date"><%= notice[0].notDate %></span>
+        </div>
       <%}%>
     </div>
     <div id="top">
