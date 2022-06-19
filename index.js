@@ -65,6 +65,8 @@ app.get("/main/notice", function(req,res){
 app.get("/main/:id/calender", function(req,res){ 
     const id = req.params.id;
     var date = req.query.date;
+    var userId = req.cookies['id'];
+    var userName = req.cookies['name'];
 
     if(date == undefined){
         var today = new Date();
@@ -80,7 +82,7 @@ app.get("/main/:id/calender", function(req,res){
       if(err) {
         console.error(err.message);
       }
-      res.render('calender', {id: id, project:row, date:date});
+      res.render('calender', {id: id, project:row, date:date, userId:userId, userName:userName});
     });
 })
 
