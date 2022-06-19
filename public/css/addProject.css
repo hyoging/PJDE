@@ -25,6 +25,7 @@
 
 form{
     margin-left: 500px;
+    margin-top: 20px;
 }
 
 #title{
@@ -49,4 +50,21 @@ form{
     width: 1008px;
     height: 50px;
     margin-bottom: 20px;
+}
+
+#progText{
+    font-family: paybooc-Bold;
+    font-size:11pt;
+    margin-top: 25px;
+}
+
+#progress{
+    font-family: paybooc-Bold;
+    font-size:11pt;
+    text-align: left;
+    width: 920px;   
+    height: 50px;
+    margin: 0%;
+    margin-top: 10px;
+    margin-left: 30px;
 }
