@@ -24,7 +24,6 @@ body{
     border: solid 1px black;
     padding-bottom: 30px;
     margin: 0 auto;
-    margin-top: 50px;
 }
 #calender_head{
     display: flex;
@@ -111,10 +110,14 @@ input {
     background-color: white;
 }
 
-#date button{
-    background-color: #798FBA;
-    border: 0px;
-    color: white;
-    font-size: 20px;
-    margin-right: 10px;
+#add{
+    background-color: white;
+    color: #798FBA;
+    border: 1px solid #798FBA;
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    margin-left: 1421ㅂpx;
+    margin-top: 50px;
+    margin-bottom: 5px;
 }
