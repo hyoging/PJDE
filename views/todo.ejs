@@ -15,7 +15,6 @@
     />
     <title>투두리스트</title>
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script defer src="./todo.js"></script>
     <script type="text/javascript">
       function clickSetting() {
         var x = document.getElementById("setting");
@@ -35,11 +34,18 @@
     }
     function addTodo(){
       const title = document.getElementById("text").value;
+      console.log(title);
       if(title != ""){
         var link = 'todo/addTodo?title='+title;
         location.href=link;
       }
+      
     }    
+    function enterkey() {
+      if (window.event.keyCode == 13) {
+        addTodo();
+      }
+    }
     function handleClick(cb) {
       if(cb.checked){
         var title = cb.value.toString().replace("{", "");
@@ -176,13 +182,15 @@
         <div class="listBox">
           <!-- 작성하기 -->
           <div class="addBox">
-            <div class="addBox_inner">
+            <div class="addBox_inner" onsubmit="return false;">
               <input
-              id="text"
+                id="text"
                 type="text"
                 class="addTxt"
                 placeholder="새로 작성하기"
+                onkeyup="enterkey()"
               />
+              <input type="text" style="display:none;">
               <input type="button" class="addBtn" value="+" onclick="addTodo()"/>
             </div>
           </div>
