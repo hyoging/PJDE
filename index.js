@@ -299,7 +299,67 @@ app.get("/create", function(req,res){
 
 })
 app.get("/main/:id/todo", function(req,res){ 
+    var id = req.params.id;
     var userId = req.cookies['id'];
     var userName = req.cookies['name'];
-    res.render('todo', {userId:userId, userName:userName});
+
+    var sql = 'select * from todo where userId = "' + userId + '" and proId = "' + id + '" order by checked;';
+
+    db.query(sql, (err, row)=>{
+        if(err) {
+          console.error(err.message);
+        }
+        res.render('todo', {project:row, userId:userId, userName:userName});
+      });
  })
+
+ app.get("/main/:id/todo/addTodo", function(req,res){ 
+    var userId = req.cookies['id'];
+    var userName = req.cookies['name'];
+    var id = req.params.id;
+    var title = req.query.title;
+
+    var sql = 'select * from todo where userId = "' + userId + '" and proId = "' + id + '" and title = "' + title + '";';
+
+    db.query(sql, (err, row)=>{
+        if(err) {
+          console.error(err.message);
+        }
+        if(row.length == 0){
+            db.query('insert into todo (userId, proId, title, checked) VALUES("' + userId + '", "' + id + '", "' + title + '", false);');
+            res.send("<script>window.location.replace('/main/" + id + "/todo');</script>");
+        }else{
+            res.send("<script>alert('이미 있는 todo입니다.');window.location.replace('/main/" + id + "/todo');</script>");
+        }
+    });
+    
+ })
+
+ app.get("/main/:id/todo/changeTodo", function(req,res){ 
+    var userId = req.cookies['id'];
+    var userName = req.cookies['name'];
+    var id = req.params.id;
+    var title = req.query.title;
+    var checked = req.query.checked;
+
+    db.query('UPDATE todo SET checked =' + checked + ' where userId = "' + userId + '" and proId = "' + id + '" and title = "' + title + '";');
+    res.send("<script>window.location.replace('/main/" + id + "/todo');</script>");
+    
+ })
+
+ app.get("/main/:id/todo/deleteAll", function(req,res){ 
+    var userId = req.cookies['id'];
+    var id = req.params.id;
+
+    var sql = 'DELETE FROM todo where userId = "' + userId + '" and proId = "' + id + '";';
+
+    db.query(sql, (err, row)=>{
+        if(err) {
+          console.error(err.message);
+        }
+        res.send("<script>window.location.replace('/main/" + id + "/todo');</script>");
+    });
+    
+ })
+ 
+ 

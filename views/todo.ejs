@@ -33,6 +33,26 @@
         location.href=link;
       }
     }
+    function addTodo(){
+      const title = document.getElementById("text").value;
+      if(title != ""){
+        var link = 'todo/addTodo?title='+title;
+        location.href=link;
+      }
+    }    
+    function handleClick(cb) {
+      if(cb.checked){
+        var title = cb.value.toString().replace("{", "");
+        title = title.replace("}", "");
+        var link = 'todo/changeTodo?title='+title+'&checked='+true;
+        location.href=link;
+      }else{
+        var title = cb.value.toString().replace("{", "");
+        title = title.replace("}", "");
+        var link = 'todo/changeTodo?title='+title+'&checked='+false;
+        location.href=link;
+      }
+    }
     </script>
     <style>
       body {
@@ -158,24 +178,32 @@
           <div class="addBox">
             <div class="addBox_inner">
               <input
+              id="text"
                 type="text"
                 class="addTxt"
                 placeholder="새로 작성하기"
               />
-              <input type="button" class="addBtn" value="+" />
+              <input type="button" class="addBtn" value="+" onclick="addTodo()"/>
             </div>
           </div>
 
           <!-- 전체선택/삭제 -->
           <div class="allCheckBox">
-            <label class="allSelect_lb"
-              ><input type="checkbox" class="allSelect" />전체선택</label
-            >
-            <a href="javascript:void(0)" class="allDel">전체삭제</a>
+            <a href="todo/deleteAll" class="allDel">전체삭제</a>
           </div>
 
           <!-- 목록 -->
-          <div class="listBox_inner"></div>
+          <div class="listBox_inner">
+            <% for (var i = 0; i < project.length; i++){ %>
+              <% if (project[i].checked == true){ %>
+                <del style="color: gray;"><label style="color: gray;"><input type="checkbox" checked value={<%= project[i].title;%>} onclick='handleClick(this);'><%= project[i].title;%></label></del>
+                <br>
+              <% }else{ %>
+              <label><input type="checkbox" value={<%= project[i].title;%>} onclick='handleClick(this);'><%= project[i].title;%></label>
+              <br>
+              <% } %>
+            <% } %>
+          </div>
         </div>
       </div>
    
