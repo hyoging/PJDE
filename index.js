@@ -258,44 +258,50 @@ app.get("/create", function(req,res){
 
     const sql = "SELECT * FROM user WHERE userId=?";
 
-    db.query(sql, id1, (err1, row1)=>{
-        if(err1) {
-            console.error(err1.message);
-        }
-        if(row1.length > 0){
-            db.query(sql, id2, (err2, row2)=>{
-                if(err2) {
-                    console.error(err2.message);
-                }
-                if(row2.length > 0){
-                    db.query(sql, id3, (err3, row3)=>{
-                        if(err3) {
-                            console.error(err3.message);
-                        }
-                        if(row3.length > 0){
-                            db.query(sql, id4, (err4, row4)=>{
-                                if(err4) {
-                                    console.error(err4.message);
-                                }
-                                if(row4.length > 0){
-                                    db.query('insert into project (proId, proName, col, manager, userId1, userId2, userId3, userId4, progress) VALUES("' + proid + '", "' + title + '", "' + color + '", "' + Id + '", "' + id1 + '", "' + id2 + '", "' + id3 + '", "' + id4 + '", "' + progress + '");');
-                                    res.send("<script> window.location.replace('/main');</script>");
-                                }else{
-                                    res.send("<script>alert('" + id4 + "는(은) 없는 아이디입니다.'); window.location.replace('/addProject');</script>");
-                                }
-                            });
-                        }else{
-                            res.send("<script>alert('" + id3 + "는(은) 없는 아이디입니다.'); window.location.replace('/addProject');</script>");
-                        }
-                    });
-                }else{
-                    res.send("<script>alert('" + id2 + "는(은) 없는 아이디입니다.'); window.location.replace('/addProject');</script>");
-                }
-            });
-        }else{
-            res.send("<script>alert('" + id1 + "는(은) 없는 아이디입니다.'); window.location.replace('/addProject');</script>");
-        }
-    });
+    if(title != ""){
+        db.query(sql, id1, (err1, row1)=>{
+            if(err1) {
+                console.error(err1.message);
+            }
+            if(row1.length > 0){
+                db.query(sql, id2, (err2, row2)=>{
+                    if(err2) {
+                        console.error(err2.message);
+                    }
+                    if(row2.length > 0){
+                        db.query(sql, id3, (err3, row3)=>{
+                            if(err3) {
+                                console.error(err3.message);
+                            }
+                            if(row3.length > 0){
+                                db.query(sql, id4, (err4, row4)=>{
+                                    if(err4) {
+                                        console.error(err4.message);
+                                    }
+                                    if(row4.length > 0){
+                                        db.query('insert into project (proId, proName, col, manager, userId1, userId2, userId3, userId4, progress) VALUES("' + proid + '", "' + title + '", "' + color + '", "' + Id + '", "' + id1 + '", "' + id2 + '", "' + id3 + '", "' + id4 + '", "' + progress + '");');
+                                        res.send("<script> window.location.replace('/main');</script>");
+                                    }else{
+                                        res.send("<script>alert('" + id4 + "는(은) 없는 아이디입니다.'); window.location.replace('/addProject');</script>");
+                                    }
+                                });
+                            }else{
+                                res.send("<script>alert('" + id3 + "는(은) 없는 아이디입니다.'); window.location.replace('/addProject');</script>");
+                            }
+                        });
+                    }else{
+                        res.send("<script>alert('" + id2 + "는(은) 없는 아이디입니다.'); window.location.replace('/addProject');</script>");
+                    }
+                });
+            }else{
+                res.send("<script>alert('" + id1 + "는(은) 없는 아이디입니다.'); window.location.replace('/addProject');</script>");
+            }
+        });
+    }else{
+        res.send("<script>alert('프로젝트 명을 입력해주세요.'); window.location.replace('/addProject');</script>");
+    }
+
+    
 
 })
 app.get("/main/:id/todo", function(req,res){ 
