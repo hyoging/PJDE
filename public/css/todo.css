@@ -103,8 +103,7 @@ header {
     height: 280px;
     margin: 10px 0;
     overflow: auto;
-    font-size: 20px;
-    margin-left: 25px;
+    font-size: 24px;
 }
 .listBox{
     width: 770px;

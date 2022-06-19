@@ -23,7 +23,13 @@
           x.style.visibility = "visible";
         }
       }
-
+      function logout(){
+        var answer = confirm("로그아웃 하시겠습니까?");
+        if(answer == true){
+          var link = '../../logout'
+          location.href=link;
+        }
+      }
 
       $(function () {
         var today = new Date();
@@ -325,16 +331,12 @@
           <button onclick="clickSetting()">
             <img src="/img/menu_img.png" style="height: 40px; width: 40px" />
           </button>
-          <!-- <div style="margin-top: 50px;">
-                  <p>NEW 공지</p>
-                  <hr>
-              </div> -->
           <div style="margin-top: 50px">
             <p>프로젝트 수정 및 삭제</p>
             <hr />
           </div>
           <div>
-            <p>로그아웃</p>
+            <p onclick="logout()">로그아웃</p>
             <p>회원 탈퇴</p>
           </div>
         </div>

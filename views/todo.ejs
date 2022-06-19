@@ -15,7 +15,6 @@
     />
     <title>투두리스트</title>
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script defer src="./todo.js"></script>
     <script type="text/javascript">
       function clickSetting() {
         var x = document.getElementById("setting");
@@ -24,7 +23,42 @@
         } else {
           x.style.visibility = "visible";
         }
+        
       }
+      function logout(){
+      var answer = confirm("로그아웃 하시겠습니까?");
+      if(answer == true){
+        var link = '../../../logout'
+        location.href=link;
+      }
+    }
+    function addTodo(){
+      const title = document.getElementById("text").value;
+      console.log(title);
+      if(title != ""){
+        var link = 'todo/addTodo?title='+title;
+        location.href=link;
+      }
+      
+    }    
+    function enterkey() {
+      if (window.event.keyCode == 13) {
+        addTodo();
+      }
+    }
+    function handleClick(cb) {
+      if(cb.checked){
+        var title = cb.value.toString().replace("{", "");
+        title = title.replace("}", "");
+        var link = 'todo/changeTodo?title='+title+'&checked='+true;
+        location.href=link;
+      }else{
+        var title = cb.value.toString().replace("{", "");
+        title = title.replace("}", "");
+        var link = 'todo/changeTodo?title='+title+'&checked='+false;
+        location.href=link;
+      }
+    }
     </script>
     <style>
       body {
@@ -61,6 +95,8 @@
       #menu button {
         float: right;
         position: fixed;
+        background-color: white;
+        border: 0px;
         right: 0px;
         top: 14px;
       }
@@ -79,11 +115,11 @@
         margin-left: 10px;
       }
       #name {
-        font-size: 13pt;
+        font-size: 14pt;
         margin-bottom: 3px;
       }
       #id {
-        font-size: 11pt;
+        font-size: 12pt;
         color: gray;
       }
       #profile img {
@@ -119,12 +155,11 @@
             <span><a href="todo">TODO</a></span>
             <span><a href="notice">공지사항</a></span>
           </div>
-        <div class="setting_menu">
-            <img
-            src="/img/fake.png"
-            style="height: 40px; width: 40px"
-          />
-        </div>
+          <div class="setting_menu">
+            <button onclick="clickSetting()">
+              <img src="/img/menu_img.png" style="height: 40px; width: 40px" />
+            </button>
+          </div>
       </nav>
      <form method="GET" action="todo">
     <div class="inner">
@@ -147,32 +182,64 @@
         <div class="listBox">
           <!-- 작성하기 -->
           <div class="addBox">
-            <div class="addBox_inner">
+            <div class="addBox_inner" onsubmit="return false;">
               <input
+                id="text"
                 type="text"
                 class="addTxt"
                 placeholder="새로 작성하기"
+                onkeyup="enterkey()"
               />
-              <input type="button" class="addBtn" value="+" />
+              <input type="text" style="display:none;">
+              <input type="button" class="addBtn" value="+" onclick="addTodo()"/>
             </div>
           </div>
 
           <!-- 전체선택/삭제 -->
           <div class="allCheckBox">
-            <label class="allSelect_lb"
-              ><input type="checkbox" class="allSelect" />전체선택</label
-            >
-            <a href="javascript:void(0)" class="allDel">전체삭제</a>
+            <a href="todo/deleteAll" class="allDel">전체삭제</a>
           </div>
 
           <!-- 목록 -->
-          <div class="listBox_inner"></div>
+          <div class="listBox_inner">
+            <% for (var i = 0; i < project.length; i++){ %>
+              <% if (project[i].checked == true){ %>
+                <del style="color: gray;"><label style="color: gray;"><input type="checkbox" checked value={<%= project[i].title;%>} onclick='handleClick(this);'><%= project[i].title;%></label></del>
+                <br>
+              <% }else{ %>
+              <label><input type="checkbox" value={<%= project[i].title;%>} onclick='handleClick(this);'><%= project[i].title;%></label>
+              <br>
+              <% } %>
+            <% } %>
+          </div>
         </div>
       </div>
    
     </div>
   </form>
-
+  <div id="setting">
+    <div id="background"></div>
+    <div id="menu">
+      <div id="profile">
+        <div id="id_name" style="width: 100px">
+          <div id="name"><%= userName %></div>
+          <div id="id"><%= userId %></div>
+        </div>
+      </div>
+      <button onclick="clickSetting()">
+        <img src="/img/menu_img.png" style="height: 40px; width: 40px" />
+      </button>
+      <div style="margin-top: 50px">
+        <p>프로젝트 수정 및 삭제</p>
+        <hr />
+      </div>
+      <div>
+        <p onclick="logout()">로그아웃</p>
+        <p>회원 탈퇴</p>
+      </div>
+    </div>
+  </div>
+</div>
 
       <div id="footer">
         <div class="col-12 col-md">

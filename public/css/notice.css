@@ -16,7 +16,7 @@
     text-align: center;
     padding-top: 30px;
     padding-bottom: 20px;
-    min-height: 609px;
+    min-height: 629px;
 }
 
 #wrapper{
@@ -76,5 +76,6 @@
 #empty{
     text-align: center;
     position: relative;
+    margin-top: 10px;
     top: 270px;
 }
