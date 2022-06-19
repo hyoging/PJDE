@@ -24,6 +24,13 @@
           x.style.visibility = "visible";
         }
       }
+      function logout(){
+        var answer = confirm("로그아웃 하시겠습니까?");
+        if(answer == true){
+          var link = '../../logout'
+          location.href=link;
+        }
+      }
     </script>
     <style>
       body {
@@ -41,14 +48,14 @@
         display: flex;
         visibility: hidden;
       }
-
+  
       #background {
         background-color: black;
         opacity: 50%;
         width: 80%;
         height: 100%;
       }
-
+  
       #menu {
         background-color: white;
         width: 20%;
@@ -56,14 +63,16 @@
         padding-left: 20px;
         padding-right: 20px;
       }
-
+  
       #menu button {
         float: right;
         position: fixed;
+        background-color: white;
+        border: 0px;
         right: 0px;
         top: 14px;
       }
-
+  
       #btn {
         background-color: white;
         border: 0px;
@@ -78,11 +87,11 @@
         margin-left: 10px;
       }
       #name {
-        font-size: 13pt;
+        font-size: 14pt;
         margin-bottom: 3px;
       }
       #id {
-        font-size: 11pt;
+        font-size: 12pt;
         color: gray;
       }
       #profile img {
@@ -118,34 +127,56 @@
             <span><a href="todo">TODO</a></span>
             <span><a href="notice">공지사항</a></span>
           </div>
-        <div class="setting_menu">
-            <img
-            src="/img/fake.png"
-            style="height: 40px; width: 40px"
-          />
-        </div>
+          <div class="setting_menu">
+            <button onclick="clickSetting()">
+              <img src="/img/menu_img.png" style="height: 40px; width: 40px" />
+            </button>
+          </div>
       </nav>
     <div class="top">
-            <% if(project.length == 0){ %>
-                <div id="empty">회의록이 없습니다.</div>
-            <%}else{%>
-                <% for (var i = 0; i < project.length; i++){ %>
-                <div class="log">
-                    <p class="title">회의 주제: <%= project[i].title %></p>
-                    <div class="name_date">
-                        <span class="name">작성자: <%= project[i].userId %></span>
-                        <span class="sep">|</span>
-                        <span class="date"><%= project[i].meDate %></span>
-                    </div>
-                    <hr>
-                    <p class="content"> <%= project[i].content %> </p>
-                </div>
-                <% } %>
-              <% } %>
-        <div class="add">
-            <a href="meeting/addMeeting"><img src="/img/plus.png" class="add"></a>
+      <% if(project.length == 0){ %>
+        <div id="empty">회의록이 없습니다.</div>
+      <%}else{%>
+        <% for (var i = 0; i < project.length; i++){ %>
+          <div class="log">
+            <p class="title">회의 주제: <%= project[i].title %></p>
+            <div class="name_date">
+              <span class="name">작성자: <%= project[i].userId %></span>
+              <span class="sep">|</span>
+              <span class="date"><%= project[i].meDate %></span>
+            </div>
+            <hr>
+            <p class="content"> <%= project[i].content %> </p>
+          </div>
+        <% } %>
+      <% } %>
+      <div class="add">
+        <a href="meeting/addMeeting"><img src="/img/plus.png" class="add"></a>
+      </div>
+    </div>  
+    <div id="setting">
+      <div id="background"></div>
+      <div id="menu">
+        <div id="profile">
+          <div id="id_name" style="width: 100px">
+            <div id="name"><%= userName %></div>
+            <div id="id"><%= userId %></div>
+          </div>
         </div>
+        <button onclick="clickSetting()">
+          <img src="/img/menu_img.png" style="height: 40px; width: 40px" />
+        </button>
+        <div style="margin-top: 50px">
+          <p>프로젝트 수정 및 삭제</p>
+          <hr />
+        </div>
+        <div>
+          <p onclick="logout()">로그아웃</p>
+          <p>회원 탈퇴</p>
+        </div>
+      </div>
     </div>
+</div>
       <div id="footer">
         <div class="col-12 col-md">
           <img

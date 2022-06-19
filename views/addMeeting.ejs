@@ -17,6 +17,21 @@
                 }
             });
         });
+        function clickSetting() {
+        var x = document.getElementById("setting");
+        if (x.style.visibility === "visible") {
+          x.style.visibility = "hidden";
+        } else {
+          x.style.visibility = "visible";
+        }
+      }
+        function logout(){
+        var answer = confirm("로그아웃 하시겠습니까?");
+        if(answer == true){
+          var link = '../../../logout'
+          location.href=link;
+        }
+      }
 
     </script>
     <link
@@ -28,6 +43,83 @@
     <link rel="stylesheet" href="/css/headerStyle.css" />
     <link rel="stylesheet" href="/css/footerStyle.css" />
     <title>회의록 추가</title>
+    <style>
+    body {
+      width: 100vw;
+    }
+    .mid {
+      margin-right: 20px;
+      padding-bottom: 40px;
+    }
+    #setting {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0px;
+      display: flex;
+      visibility: hidden;
+    }
+
+    #background {
+      background-color: black;
+      opacity: 50%;
+      width: 80%;
+      height: 100%;
+    }
+
+    #menu {
+      background-color: white;
+      width: 20%;
+      height: 100%;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    #menu button {
+      float: right;
+      position: fixed;
+      background-color: white;
+      border: 0px;
+      right: 0px;
+      top: 14px;
+    }
+
+    #btn {
+      background-color: white;
+      border: 0px;
+    }
+    #profile {
+      display: flex;
+      margin-top: 50px;
+      align-items: center;
+    }
+    #id_name {
+      display: block;
+      margin-left: 10px;
+    }
+    #name {
+      font-size: 14pt;
+      margin-bottom: 3px;
+    }
+    #id {
+      font-size: 12pt;
+      color: gray;
+    }
+    #profile img {
+      border-radius: 50%;
+      background-color: black;
+    }
+    #menu p {
+      font-size: 18px;
+      padding-left: 8px;
+      padding-right: 8px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+    .active {
+      background-color: gray;
+    }
+  </style>
   </head>
   <body>
     <nav class="header">
@@ -46,12 +138,11 @@
             <span><a href="../todo">TODO</a></span>
             <span><a href="../notice">공지사항</a></span>
           </div>
-        <div class="setting_menu">
-            <img
-            src="/img/fake.png"
-            style="height: 40px; width: 40px"
-          />
-        </div>
+          <div class="setting_menu">
+            <button onclick="clickSetting()">
+              <img src="/img/menu_img.png" style="height: 40px; width: 40px" />
+            </button>
+          </div>
       </nav>
       <div class="top">
         <form method="get" action="addMeeting/addMeet">
@@ -60,6 +151,28 @@
             <div id="test_cnt">(0 / 500)</div>
             <input type="submit" value="저장" id="button">
         </form>
+      </div>
+      <div id="setting">
+        <div id="background"></div>
+        <div id="menu">
+          <div id="profile">
+            <div id="id_name" style="width: 100px">
+              <div id="name"><%= userName %></div>
+              <div id="id"><%= userId %></div>
+            </div>
+          </div>
+          <button onclick="clickSetting()">
+            <img src="/img/menu_img.png" style="height: 40px; width: 40px" />
+          </button>
+          <div style="margin-top: 50px">
+            <p>프로젝트 수정 및 삭제</p>
+            <hr />
+          </div>
+          <div>
+            <p onclick="logout()">로그아웃</p>
+            <p>회원 탈퇴</p>
+          </div>
+        </div>
       </div>
     <div id="footer">
         <div class="col-12 col-md">

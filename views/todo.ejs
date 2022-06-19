@@ -24,7 +24,15 @@
         } else {
           x.style.visibility = "visible";
         }
+        
       }
+      function logout(){
+      var answer = confirm("로그아웃 하시겠습니까?");
+      if(answer == true){
+        var link = '../../../logout'
+        location.href=link;
+      }
+    }
     </script>
     <style>
       body {
@@ -61,6 +69,8 @@
       #menu button {
         float: right;
         position: fixed;
+        background-color: white;
+        border: 0px;
         right: 0px;
         top: 14px;
       }
@@ -79,11 +89,11 @@
         margin-left: 10px;
       }
       #name {
-        font-size: 13pt;
+        font-size: 14pt;
         margin-bottom: 3px;
       }
       #id {
-        font-size: 11pt;
+        font-size: 12pt;
         color: gray;
       }
       #profile img {
@@ -119,12 +129,11 @@
             <span><a href="todo">TODO</a></span>
             <span><a href="notice">공지사항</a></span>
           </div>
-        <div class="setting_menu">
-            <img
-            src="/img/fake.png"
-            style="height: 40px; width: 40px"
-          />
-        </div>
+          <div class="setting_menu">
+            <button onclick="clickSetting()">
+              <img src="/img/menu_img.png" style="height: 40px; width: 40px" />
+            </button>
+          </div>
       </nav>
      <form method="GET" action="todo">
     <div class="inner">
@@ -172,7 +181,29 @@
    
     </div>
   </form>
-
+  <div id="setting">
+    <div id="background"></div>
+    <div id="menu">
+      <div id="profile">
+        <div id="id_name" style="width: 100px">
+          <div id="name"><%= userName %></div>
+          <div id="id"><%= userId %></div>
+        </div>
+      </div>
+      <button onclick="clickSetting()">
+        <img src="/img/menu_img.png" style="height: 40px; width: 40px" />
+      </button>
+      <div style="margin-top: 50px">
+        <p>프로젝트 수정 및 삭제</p>
+        <hr />
+      </div>
+      <div>
+        <p onclick="logout()">로그아웃</p>
+        <p>회원 탈퇴</p>
+      </div>
+    </div>
+  </div>
+</div>
 
       <div id="footer">
         <div class="col-12 col-md">

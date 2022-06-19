@@ -34,6 +34,11 @@ app.get('/', function(req,res) {
     res.render('index');
 })
 
+app.get('/logout', function(req, res){
+    res.clearCookie('id');
+    res.clearCookie('name').redirect('/');
+})
+
 app.get("/main", function(req,res){ 
     var userId = req.cookies['id'];
     
@@ -93,7 +98,9 @@ app.get("/main/:id/calender", function(req,res){
 })
 
 app.get("/main/:id/calender/addSchedule", function(req,res){
-    res.render('addSchedule');
+    var userId = req.cookies['id'];
+    var userName = req.cookies['name'];
+    res.render('addSchedule', {userId:userId, userName:userName});
 })
 
 app.get("/main/:id/calender/addSchedule/addSche", function(req,res){
@@ -107,6 +114,8 @@ app.get("/main/:id/calender/addSchedule/addSche", function(req,res){
 })
 
 app.get("/main/:id/meeting", function(req,res){ 
+    var userId = req.cookies['id'];
+    var userName = req.cookies['name'];
     const id = req.params.id;
 
     const sql = "SELECT * FROM meeting WHERE proId=? order by meDate desc";
@@ -114,12 +123,14 @@ app.get("/main/:id/meeting", function(req,res){
       if(err) {
         console.error(err.message);
       }
-      res.render('meeting', {project:row});
+      res.render('meeting', {project:row, userId:userId, userName:userName});
     });
 })
 
 app.get("/main/:id/meeting/addMeeting", function(req,res){
-    res.render('addMeeting');
+    var userId = req.cookies['id'];
+    var userName = req.cookies['name'];
+    res.render('addMeeting', {userId:userId, userName:userName});
 })
 
 app.get("/main/:id/meeting/addMeeting/addMeet", function(req,res){
@@ -135,20 +146,24 @@ app.get("/main/:id/meeting/addMeeting/addMeet", function(req,res){
 
 app.get("/main/:id/notice", function(req,res){ 
     const id = req.params.id;
+    var userId = req.cookies['id'];
+    var userName = req.cookies['name'];
 
     const sql = "SELECT * FROM notice WHERE proId=? order by notDate desc";
     db.query(sql, id, (err, row)=>{
       if(err) {
         console.error(err.message);
       }
-      res.render('notice', {project:row});
+      res.render('notice', {project:row, userId:userId, userName:userName});
     });
 })
 
 app.get("/main/:id/notice/addNotice", function(req,res){ 
     const id = req.params.id;
+    var userId = req.cookies['id'];
+    var userName = req.cookies['name'];
 
-    res.render('addNotice');
+    res.render('addNotice', {userId:userId, userName:userName});
 })
 
 app.get("/main/:id/notice/addNotice/addNot", function(req,res){
@@ -284,5 +299,7 @@ app.get("/create", function(req,res){
 
 })
 app.get("/main/:id/todo", function(req,res){ 
-      res.render('todo');
+    var userId = req.cookies['id'];
+    var userName = req.cookies['name'];
+    res.render('todo', {userId:userId, userName:userName});
  })
