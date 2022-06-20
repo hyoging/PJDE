@@ -100,7 +100,7 @@ header h1{
   
 .listBox_inner {
     width: 100%;
-    min-height: 280px;
+    min-height: 300px;
     margin: 10px 0 30px;
     overflow: auto;
     font-size: 24px;
