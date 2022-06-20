@@ -14,9 +14,16 @@
     width: 70px;
     height: 70px; 
     float:left;
-    margin-left: 3%;
-    margin-right: 1%;
+    margin-left: 80px;
+    margin-right: 13px;
     margin-bottom: 2px;
+}
+
+#newImg img{
+    width: 64px;
+    height: 64px; 
+    position: relative;
+    bottom: 5px;
 }
 
 #banner p{
@@ -24,17 +31,19 @@
 }
 .titleNt{
     font-family: paybooc-Bold;
-    font-size: 15pt;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .titleNt a{
     font-size: 25pt;
 }
+.titleNotice{
+    font-size: 15pt;
+    margin-bottom: 10px;
+}
 .projectNt{
     font-family: paybooc-Bold;
-    font-size: 14pt;
-   
-    
+    margin-top: 0px;
+    margin-bottom: 20px;
 }
 
 .project{
