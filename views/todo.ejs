@@ -48,13 +48,11 @@
     }
     function handleClick(cb) {
       if(cb.checked){
-        var title = cb.value.toString().replace("{", "");
-        title = title.replace("}", "");
+        var title = cb.value.toString();
         var link = 'todo/changeTodo?title='+title+'&checked='+true;
         location.href=link;
       }else{
-        var title = cb.value.toString().replace("{", "");
-        title = title.replace("}", "");
+        var title = cb.value.toString();
         var link = 'todo/changeTodo?title='+title+'&checked='+false;
         location.href=link;
       }
@@ -209,10 +207,10 @@
           <div class="listBox_inner">
             <% for (var i = 0; i < project.length; i++){ %>
               <% if (project[i].checked == true){ %>
-                <del style="color: gray;"><label style="color: gray;"><input type="checkbox" checked value={<%= project[i].title;%>} onclick='handleClick(this);'><%= project[i].title;%></label></del>
+                <del style="margin-bottom: 20px; color: gray;"><label style="color: gray; "><input type="checkbox" style="margin-bottom: 20px;" checked value="<%= project[i].title;%>" onclick='handleClick(this);'><%= project[i].title;%></label></del>
                 <br>
               <% }else{ %>
-              <label><input type="checkbox" value={<%= project[i].title;%>} onclick='handleClick(this);'><%= project[i].title;%></label>
+              <label><input type="checkbox" style="margin-bottom: 20px;" value="<%= project[i].title;%>" onclick='handleClick(this);'><%= project[i].title;%></label>
               <br>
               <% } %>
             <% } %>
