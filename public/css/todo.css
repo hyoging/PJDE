@@ -21,7 +21,7 @@ form{
   
 header {
     width: 100%;
-    margin: 20px auto;
+    margin: 30px auto;
     display: flex;
     justify-content: center;
     font-size: 40px;
@@ -58,13 +58,11 @@ header h1{
 }
   
 .addBox {
-    width: 750px;
     height: 70px;
 }
   
 .addBox_inner {
     display: flex;
-    width: 770px;
     margin-bottom: 5px;
     margin-top: 30px;
 }
@@ -107,11 +105,7 @@ header h1{
     overflow: auto;
     font-size: 24px;
 }
-.listBox{
-    width: 770px;
-}
   
-
 .list {
     width: 100%;
     margin-bottom: 8px;
