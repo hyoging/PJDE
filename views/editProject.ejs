@@ -5,168 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript">
-        function clickSetting() {
-        var x = document.getElementById("setting");
-        if (x.style.visibility === "visible") {
-          x.style.visibility = "hidden";
-        } else {
-          x.style.visibility = "visible";
-        }
-      }
-        function logout(){
-        var answer = confirm("로그아웃 하시겠습니까?");
-        if(answer == true){
-          var link = '../../../logout'
-          location.href=link;
-        }
-      }
-
-      function editProject(){
-          var link = '../editProject'
-          location.href=link;
-      }
-
-    </script>
-    <style>
-      body {
-        width: 100vw;
-      }
-      .mid {
-        margin-right: 20px;
-        padding-bottom: 40px;
-      }
-      #setting {
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        top: 0px;
-        display: flex;
-        visibility: hidden;
-      }
-  
-      #background {
-        background-color: black;
-        opacity: 50%;
-        width: 80%;
-        height: 100%;
-      }
-  
-      #menu {
-        background-color: white;
-        width: 20%;
-        height: 100%;
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-  
-      #menu button {
-        float: right;
-        position: fixed;
-        background-color: white;
-        border: 0px;
-        right: 0px;
-        top: 14px;
-      }
-  
-      #btn {
-        background-color: white;
-        border: 0px;
-      }
-      #profile {
-        display: flex;
-        margin-top: 50px;
-        align-items: center;
-      }
-      #id_name {
-        display: block;
-        margin-left: 10px;
-      }
-      #name {
-        font-size: 14pt;
-        margin-bottom: 3px;
-      }
-      #id {
-        font-size: 12pt;
-        color: gray;
-      }
-      #profile img {
-        border-radius: 50%;
-        background-color: black;
-      }
-      #menu p {
-        font-size: 18px;
-        padding-left: 8px;
-        padding-right: 8px;
-        margin-top: 15px;
-        margin-bottom: 15px;
-      }
-      .active {
-        background-color: gray;
-      }
-    </style>
     <link
       rel="shortcut icon"
       type="image/x-icon"
-      href="/img/logo2.png"
+      href="img/logo2.png"
     />
-    <link rel="stylesheet" href="/css/addNotice.css" />
-    <link rel="stylesheet" href="/css/headerStyle.css" />
+    <link rel="stylesheet" href="/css/editProject.css" />
+    <link rel="stylesheet" href="/css/main_header.css" />
     <link rel="stylesheet" href="/css/footerStyle.css" />
-    <title>공지사항 추가</title>
+    <script defer src="js/addProject.js"></script>
+    <title>프로젝트 수정 및 삭제</title>
   </head>
+  <script type="text/javascript">
+    function deleteAll(){
+        var answer = confirm("프로젝트를 삭제하시겠습니까?");
+		if(answer == true){
+			var link = 'delete';
+            location.href=link;
+		}
+    }
+  </script>
   <body>
     <nav class="header">
-        <div class="logo">
+        <div class="fake" style="text-align: center">
           <img
-            src="/img/logo2.png"
-            style="height: 50px; width: 50px"
+            src="/img/fake.png"
+            style="height: 60px; width: 60px"
           />
-          <span><a href="../../../main">프젝돔이</a></span>
         </div>
-  
-        <div class="headermenu" style="text-align: center">
-            <span><a href="../../../main">내 프젝</a></span>
-            <span><a href="../calender">캘린더</a></span>
-            <span><a href="../meeting">회의록</a></span>
-            <span><a href="../todo">TODO</a></span>
-            <span><a href="../notice">공지사항</a></span>
+        <div class="logo" style="text-align: center">
+            <a href="../../main">
+              <img class="img"
+              src="/img/logo.png"
+              style="height: 60px; width: 60px"
+              />
+            <span class="pjde">프젝돔이</span></a>
           </div>
-          <div class="setting_menu">
-            <button onclick="clickSetting()">
-              <img src="/img/menu_img.png" style="height: 40px; width: 40px" />
-            </button>
-          </div>
-      </nav>
-      <div class="top">
-        <form method="get" action="addNotice/addNot">
-            <input type="text" id="content" name="content" placeholder="공지 내용을 입력하세요" /><br />
-            <input type="submit" value="저장" id="button">
-        </form>
-      </div>
-      <div id="setting">
-        <div id="background"></div>
-        <div id="menu">
-          <div id="profile">
-            <div id="id_name" style="width: 100px">
-              <div id="name"><%= userName %></div>
-              <div id="id"><%= userId %></div>
-            </div>
-          </div>
-          <button onclick="clickSetting()">
-            <img src="/img/menu_img.png" style="height: 40px; width: 40px" />
-          </button>
-          <div style="margin-top: 50px">
-            <p onclick="editProject()">프로젝트 수정 및 삭제</p>
-            <hr />
-          </div>
-          <div>
-            <p onclick="logout()">로그아웃</p>
-            <p>회원 탈퇴</p>
-          </div>
+        <div class="notice_icon">
+          <a href=""
+            ><img
+              src="/img/fake.png"
+              style="height: 40px; width: 40px"
+          /></a>
         </div>
-      </div>
+    </nav>
+    <form method="get" action="editPro">
+      <input type="color" id="color" name="color" title="클릭 시 색을 설정할 수 있습니다." value=<%= project[0].col;%>><br/>
+      <input id = "title" name="title" type="text" placeholder="프로젝트 명" value=<%= project[0].proName;%>> <br />
+      <input id = "id1" class="member" name = "id1" type="text" placeholder="관리자 아이디" value=<%= project[0].manager;%>> <br />
+      <input id = "id2" class="member" name = "id2" type="text" placeholder="멤버 아이디" value=<%= project[0].userId1;%>> <br />
+      <input id = "id3" class="member" name = "id3" type="text" placeholder="멤버 아이디" value=<%= project[0].userI21;%>> <br />
+      <input id = "id4" class="member" name = "id4" type="text" placeholder="멤버 아이디" value=<%= project[0].userId3;%>> <br />
+      <input id = "id5" class="member" name = "id5" type="text" placeholder="멤버 아이디" value=<%= project[0].userId4;%>> <br />
+      <p id="progText" style="float: left;">진행 상태</p>
+      <input id="progress" type="range" min="0" max="100" name="progress" value=<%= project[0].progress;%>></br>
+      <input type="submit" value="완료" id="button" style="
+      background-color: #798fba;
+      margin-top: 30px;
+      font-size: 15pt;
+      color: white;" onclick="edit()">
+      <br/>
+    </form>
+    <input type="submit" value="삭제" id="delete" style="
+      background-color: red;
+      font-size: 15pt;
+      color: white;" onclick="deleteAll()">
     <div id="footer">
         <div class="col-12 col-md">
           <img
@@ -183,7 +86,7 @@
             ></small
           >
         </div>
-  
+    
         <div class="col-6 col-md">
           <h5>Name</h5>
           <ul class="list-unstyled">
@@ -194,7 +97,7 @@
             <li><a class="link-secondary">조나현</a></li>
           </ul>
         </div>
-  
+    
         <div class="col-6 col-md">
           <h5>Github</h5>
           <ul class="list-unstyled">
@@ -240,7 +143,7 @@
             </li>
           </ul>
         </div>
-  
+    
         <div class="col-6 col-md">
           <h5>PhoneNumber</h5>
           <ul class="list-unstyled">
@@ -297,6 +200,5 @@
           </ul>
         </div>
       </div>
-    </div>
   </body>
 </html>

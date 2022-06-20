@@ -18,12 +18,14 @@ body{
     overflow-x: hidden;
 }
 
+
 #frame{
     font-family: 'paybooc-Bold';
     width: 1000px;
     border: solid 1px black;
     padding-bottom: 30px;
     margin: 0 auto;
+    margin-top: 50px;
 }
 #calender_head{
     display: flex;
@@ -111,13 +113,9 @@ input {
 }
 
 #add{
-    background-color: white;
-    color: #798FBA;
-    border: 1px solid #798FBA;
+    color: white;
     font-size: 30px;
-    width: 40px;
-    height: 40px;
-    margin-left: 1421px;
-    margin-top: 50px;
-    margin-bottom: 5px;
+    background-color: #798FBA;
+    border: 0px;
+    margin-right: 8px;
 }

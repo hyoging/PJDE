@@ -72,6 +72,37 @@ app.get("/main/notice", function(req,res){
     });
 })
 
+app.get("/main/:id/editProject", function(req,res){ 
+    const id = req.params.id;
+    var date = req.query.date;
+    var userId = req.cookies['id'];
+
+    const sql = "select * from project where proId='" + id + "';"
+    db.query(sql, (err, row)=>{
+      if(err) {
+        console.error(err.message);
+      }
+      res.render('editProject', {project:row});
+    });
+
+    // if(date == undefined){
+    //     var today = new Date();
+    //     var year = today.getFullYear();
+    //     var month = ('0' + (today.getMonth() + 1)).slice(-2);
+    //     var day = ('0' + today.getDate()).slice(-2);
+
+    //     var date = year + '-' + month  + '-' + day;
+    // }
+
+    // const sql = "SELECT * FROM schedule WHERE proId='" + id + "' and schDate='" + date + "';";
+    // db.query(sql, (err, row)=>{
+    //   if(err) {
+    //     console.error(err.message);
+    //   }
+    //   res.render('calender', {id: id, project:row, date:date, userId:userId, userName:userName});
+    // });
+})
+
 
 app.get("/main/:id/calender", function(req,res){ 
     const id = req.params.id;
@@ -300,10 +331,88 @@ app.get("/create", function(req,res){
     }else{
         res.send("<script>alert('프로젝트 명을 입력해주세요.'); window.location.replace('/addProject');</script>");
     }
-
-    
-
 })
+
+app.get("/main/:id/editPro", function(req,res){ 
+    var color = req.query.color;
+    var title = req.query.title;
+    var id = req.params.id;
+    var id1 = req.query.id1;
+    var id2 = req.query.id2;
+    var id3 = req.query.id3;
+    var id4 = req.query.id4;
+    var id5 = req.query.id5;
+    var progress = req.query.progress;
+
+    const sql = "SELECT * FROM user WHERE userId=?";
+
+    if(title != ""){
+        db.query(sql, id1, (err1, row1)=>{
+            if(err1) {
+                console.error(err1.message);
+            }
+            if(row1.length > 0){
+                db.query(sql, id2, (err2, row2)=>{
+                    if(err2) {
+                        console.error(err2.message);
+                    }
+                    if(row2.length > 0){
+                        db.query(sql, id3, (err3, row3)=>{
+                            if(err3) {
+                                console.error(err3.message);
+                            }
+                            if(row3.length > 0){
+                                db.query(sql, id4, (err4, row4)=>{
+                                    if(err4) {
+                                        console.error(err4.message);
+                                    }
+                                    if(row4.length > 0){
+                                        db.query(sql, id5, (err5, row5)=>{
+                                            if(err5) {
+                                                console.error(err5.message);
+                                            }
+                                            if(row5.length > 0){
+                                                db.query('UPDATE project SET proName = "' + title + '", col = "' + color + '", manager = "' + id1 +'", userId1 = "' + id2 + '", userId2 = "' + id3 + '", userId3 = "' + id4 + '", userId4 = "' + id5 + '", progress = "' + progress + '" WHERE proId = "' + id + '";');
+                                                res.send("<script> window.location.replace('/main/" + id + "/calender');</script>");
+                                            }else{
+                                                res.send("<script>alert('" + id5 + "는(은) 없는 아이디입니다.'); window.location.replace('/main/" + id + "/editProject'));</script>");
+                                            }
+                                        });
+                                    }else{
+                                        res.send("<script>alert('" + id4 + "는(은) 없는 아이디입니다.'); window.location.replace('/main/" + id + "/editProject');</script>");
+                                    }
+                                });
+                            }else{
+                                res.send("<script>alert('" + id3 + "는(은) 없는 아이디입니다.'); window.location.replace('/main/" + id + "/editProject');</script>");
+                            }
+                        });
+                    }else{
+                        res.send("<script>alert('" + id2 + "는(은) 없는 아이디입니다.'); window.location.replace('/main/" + id + "/editProject');</script>");
+                    }
+                });
+            }else{
+                res.send("<script>alert('" + id1 + "는(은) 없는 아이디입니다.'); window.location.replace('/main/" + id + "/editProject');</script>");
+            }
+        });
+    }else{
+        res.send("<script>alert('프로젝트 명을 입력해주세요.'); window.location.replace('/main/" + id + "/editProject');</script>");
+    }
+})
+
+app.get("/main/:id/delete", function(req,res){ 
+    var id = req.params.id;
+
+    var sql = 'DELETE FROM project WHERE proId="' + id + '";';
+
+    db.query(sql, (err, row)=>{
+        if(err) {
+          console.error(err.message);
+        }
+        res.send("<script> window.location.replace('/main');</script>");
+      });
+ })
+
+
 app.get("/main/:id/todo", function(req,res){ 
     var id = req.params.id;
     var userId = req.cookies['id'];

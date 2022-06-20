@@ -30,6 +30,10 @@
           location.href=link;
         }
       }
+      function editProject(){
+          var link = 'editProject'
+          location.href=link;
+      }
 
       $(function () {
         var today = new Date();
@@ -280,7 +284,6 @@
         </div>
       </nav>
     <div class="container">
-        <button id="add" title="일정 추가"><a href="calender/addSchedule">+</a></button>
         <div id="frame">
           <div id="calender_head">
             <input name="preMon" type="button" value="<" />
@@ -312,6 +315,7 @@
           <div id="date">
               <div id="date1">
                 <div class="summary"><%= date %></div>
+                <button id="add" title="일정 추가"><a href="calender/addSchedule">+</a></button>
               </div>
               <% for (var i = 0; i < project.length; i++){ %>
                 <p><%= project[i].schNm %></p>
@@ -332,7 +336,7 @@
             <img src="/img/menu_img.png" style="height: 40px; width: 40px" />
           </button>
           <div style="margin-top: 50px">
-            <p>프로젝트 수정 및 삭제</p>
+            <p onclick="editProject()">프로젝트 수정 및 삭제</p>
             <hr />
           </div>
           <div>

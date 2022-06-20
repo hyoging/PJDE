@@ -1,0 +1,80 @@
+@font-face {
+    font-family: 'paybooc-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'InfinitySans-BoldA1';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-BoldA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+#top{
+    min-height: 651px;
+    text-align: center;
+}
+
+#color{
+    width: 60px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 948px;
+}
+
+form{
+    margin-left: 480px;
+    margin-top: 20px;
+}
+
+#title{
+    font-family: paybooc-Bold;
+    width: 1000px;
+    height: 50px;
+    font-size: 12pt;
+    margin-top: 10px;
+}
+
+.member{
+    font-family: paybooc-Bold;
+    font-size:11pt;
+    text-align: left;
+    width: 1000px;   
+    height: 50px;
+    margin: 0%;
+    margin-top: 10px;
+}
+
+#button{
+    width: 1008px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+#delete{
+    width: 1008px;
+    height: 50px;
+    margin-bottom: 20px;
+    margin-left: 480px;
+}
+
+#progText{
+    font-family: paybooc-Bold;
+    font-size:11pt;
+    margin-top: 25px;
+    position: absolute;
+    left: 503px;
+}
+
+#progress{
+    font-family: paybooc-Bold;
+    font-size:11pt;
+    text-align: left;
+    width: 920px;   
+    height: 50px;
+    margin: 0%;
+    margin-top: 10px;
+    margin-left: 90px;
+}

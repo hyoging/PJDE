@@ -9,12 +9,12 @@
     <link
       rel="shortcut icon"
       type="image/x-icon"
-      href="img/logo2.png"
+      href="/img/logo2.png"
     />
     <link rel="stylesheet" href="/css/addSchedule.css" />
     <link rel="stylesheet" href="/css/headerStyle.css" />
     <link rel="stylesheet" href="/css/footerStyle.css" />
-    <title>공지사항 추가</title>
+    <title>일정 추가</title>
     <script type="text/javascript">
       function clickSetting() {
       var x = document.getElementById("setting");
@@ -30,7 +30,13 @@
         var link = '../../../logout'
         location.href=link;
       }
+
+
     }
+    function editProject(){
+          var link = '../editProject'
+          location.href=link;
+      }
 
   </script>
     <style>
@@ -161,7 +167,7 @@
           <img src="/img/menu_img.png" style="height: 40px; width: 40px" />
         </button>
         <div style="margin-top: 50px">
-          <p>프로젝트 수정 및 삭제</p>
+          <p onclick="editProject()">프로젝트 수정 및 삭제</p>
           <hr />
         </div>
         <div>
