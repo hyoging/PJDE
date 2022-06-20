@@ -107,11 +107,19 @@ app.get("/main/:id/calender", function(req,res){
     }
 
     const sql = "SELECT * FROM schedule WHERE proId='" + id + "' and schDate='" + date + "';";
+
+    const sql2 = "SELECT proName from project where proId='" + id + "';";
+
     db.query(sql, (err, row)=>{
       if(err) {
         console.error(err.message);
       }
-      res.render('calender', {id: id, project:row, date:date, userId:userId, userName:userName});
+      db.query(sql2, (err, row2)=>{
+        if(err) {
+          console.error(err.message);
+        }
+        res.render('calender', {id: id, project:row, date:date, userId:userId, userName:userName, proName:row2});
+      });
     });
 })
 
@@ -137,11 +145,17 @@ app.get("/main/:id/meeting", function(req,res){
     const id = req.params.id;
 
     const sql = "SELECT * FROM meeting WHERE proId=? order by meDate desc";
+    const sql2 = "SELECT proName from project where proId='" + id + "';";
     db.query(sql, id, (err, row)=>{
       if(err) {
         console.error(err.message);
       }
-      res.render('meeting', {project:row, userId:userId, userName:userName});
+      db.query(sql2, (err, row2)=>{
+        if(err) {
+          console.error(err.message);
+        }
+        res.render('meeting', {project:row, userId:userId, userName:userName, proName:row2});
+      });
     });
 })
 
@@ -168,11 +182,18 @@ app.get("/main/:id/notice", function(req,res){
     var userName = req.cookies['name'];
 
     const sql = "SELECT * FROM notice WHERE proId=? order by notDate desc";
+
+    const sql2 = "SELECT proName from project where proId='" + id + "';";
     db.query(sql, id, (err, row)=>{
       if(err) {
         console.error(err.message);
       }
-      res.render('notice', {project:row, userId:userId, userName:userName});
+      db.query(sql2, (err, row2)=>{
+        if(err) {
+          console.error(err.message);
+        }
+        res.render('notice', {project:row, userId:userId, userName:userName, proName:row2});
+      });
     });
 })
 
@@ -407,12 +428,18 @@ app.get("/main/:id/todo", function(req,res){
 
     var sql = 'select * from todo where userId = "' + userId + '" and proId = "' + id + '" order by checked;';
 
-    db.query(sql, (err, row)=>{
+    const sql2 = "SELECT proName from project where proId='" + id + "';";
+    db.query(sql, id, (err, row)=>{
+      if(err) {
+        console.error(err.message);
+      }
+      db.query(sql2, (err, row2)=>{
         if(err) {
           console.error(err.message);
         }
-        res.render('todo', {project:row, userId:userId, userName:userName});
+        res.render('todo', {project:row, userId:userId, userName:userName, proName:row2});
       });
+    });
  })
 
  app.get("/main/:id/todo/addTodo", function(req,res){ 

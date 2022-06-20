@@ -7,14 +7,13 @@
 .top{
     width: 100%;
     text-align: center;
-    margin-top: 50px;
     margin-bottom: 50px;
-    min-height: 594px;
+    min-height: 614px;
 }
 .log{
     display: inline-block;
     width: 1000px;
-    margin-top: 50px;
+    margin-top: 30px;
     text-align: left;
     border: solid 2px #798FBA;
     font-family: InfinitySans-RegularA1;

@@ -111,35 +111,35 @@
   </head>
   <body>
     <nav class="header">
-        <div class="fake" style="text-align: center">
-          <img
-            src="/img/fake.png"
-            style="height: 60px; width: 60px"
+      <div class="fake" style="text-align: center">
+        <img
+          src="/img/fake.png"
+          style="height: 60px; width: 160px;"
+        />
+      </div>
+      <div class="logo" style="text-align: center">
+        <a href="../main">
+          <img class="img"
+          src="/img/logo.png"
+          style="height: 60px; width: 60px;"
           />
-        </div>
-        <div class="logo" style="text-align: center">
-          <a href="../main">
-            <img class="img"
-            src="/img/logo.png"
-            style="height: 60px; width: 60px"
-            />
-          <span class="pjde">프젝돔이</span></a>
-        </div>
-        <div style="width: 121px;">
-          <span class="notice_icon">
-            <a href="notice"
-              ><img
-                src="/img/notice.png"
-                style="height: 40px; width: 40px;"
-            /></a>
-          </span>
-          <span class="setting_menu">
-            <button onclick="clickSetting()">
-              <img src="/img/menu_img.png" style="height: 40px; width: 40px" />
-            </button>
-          </span>
-        </div>
-    </nav>
+        <span class="pjde">프젝돔이</span></a>
+      </div>
+      <div style="width: 121px;">
+        <span class="notice_icon">
+          <a href="notice"
+            ><img
+              src="/img/notice.png"
+              style="height: 40px; width: 40px;"
+          /></a>
+        </span>
+        <span class="setting_menu">
+          <button onclick="clickSetting()">
+            <img src="/img/menu_img.png" style="height: 40px; width: 40px" />
+          </button>
+        </span>
+      </div>
+  </nav>
       <div id="main_wrapper">
         <% if(project.length == 0){ %>
             <div id="empty">공지사항이 없습니다.</div>

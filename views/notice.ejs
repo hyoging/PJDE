@@ -111,6 +111,11 @@
       .active {
         background-color: gray;
       }
+      #proName{
+        text-align: center;
+        margin-top: 30px;
+        font-size: 20pt;
+      }
     </style>
   </head>
   <body>
@@ -137,6 +142,9 @@
           </div>
       </nav>
       <div class="wrapper">
+        <div id="proName">
+          <%= proName[0].proName %>
+        </div>
         <% if(project.length == 0){ %>
             <div id="empty">공지사항이 없습니다.</div>
           <%}else{%>

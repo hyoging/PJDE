@@ -14,8 +14,7 @@ form{
   
 .inner {
     width: 800px;
-    padding: 30px;
-    margin: 50px auto;
+    margin: 0 auto;
     box-sizing: border-box;
    
 }
@@ -25,10 +24,13 @@ header {
     margin: 20px auto;
     display: flex;
     justify-content: center;
-    height: 200px;
     font-size: 40px;
     font-weight: 700;
     color: rgb(121, 143, 186);   
+}
+
+header h1{
+    margin: 0px;
 }
   
 .searchBox {
