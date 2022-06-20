@@ -23,6 +23,13 @@
           x.style.visibility = "visible";
         }
       }
+      function logout(){
+      var answer = confirm("로그아웃 하시겠습니까?");
+      if(answer == true){
+        var link = '../../logout'
+        location.href=link;
+      }
+    }
     </script>
     <style>
       body {
@@ -59,8 +66,10 @@
       #menu button {
         float: right;
         position: fixed;
+        background-color: white;
+        border: 0px;
         right: 0px;
-        top: 14px;
+        top: 18px;
       }
 
       #btn {
@@ -77,11 +86,11 @@
         margin-left: 10px;
       }
       #name {
-        font-size: 13pt;
+        font-size: 14pt;
         margin-bottom: 3px;
       }
       #id {
-        font-size: 11pt;
+        font-size: 12pt;
         color: gray;
       }
       #profile img {
@@ -116,15 +125,22 @@
             />
           <span class="pjde">프젝돔이</span></a>
         </div>
-        <div class="notice_icon">
-          <a href="notice"
-            ><img
-              src="/img/notice.png"
-              style="height: 40px; width: 40px"
-          /></a>
+        <div style="width: 121px;">
+          <span class="notice_icon">
+            <a href="notice"
+              ><img
+                src="/img/notice.png"
+                style="height: 40px; width: 40px;"
+            /></a>
+          </span>
+          <span class="setting_menu">
+            <button onclick="clickSetting()">
+              <img src="/img/menu_img.png" style="height: 40px; width: 40px" />
+            </button>
+          </span>
         </div>
     </nav>
-      <div id="wrapper">
+      <div id="main_wrapper">
         <% if(project.length == 0){ %>
             <div id="empty">공지사항이 없습니다.</div>
           <%}else{%>
@@ -144,6 +160,26 @@
               </div>
             <% } %>
           <% } %>
+      </div>
+      <div id="setting">
+        <div id="background"></div>
+        <div id="menu">
+          <div id="profile">
+            <div id="id_name" style="width: 100px">
+              <div id="name"><%= userName %></div>
+              <div id="id"><%= userId %></div>
+            </div>
+          </div>
+          <button onclick="clickSetting()">
+            <img src="/img/menu_img.png" style="height: 40px; width: 40px" />
+          </button>
+          <div style="margin-top: 50px">
+          </div>
+          <div>
+            <p onclick="logout()">로그아웃</p>
+            <p>회원 탈퇴</p>
+          </div>
+        </div>
       </div>
       <div id="footer">
         <div class="col-12 col-md">

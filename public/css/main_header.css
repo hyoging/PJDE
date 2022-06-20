@@ -46,7 +46,7 @@ a{
     margin-bottom: 14px;
 }
 .notice_icon{
-    margin-right: 40px;
+    margin-right: 20px;
 }
 
 .img{
@@ -56,4 +56,9 @@ a{
 .pjde{
     position:relative;
     bottom: 3px;
+}
+
+.setting_menu button{
+    background-color: white;
+    border: 0px;
 }

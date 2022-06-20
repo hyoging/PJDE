@@ -79,3 +79,11 @@
     margin-top: 10px;
     top: 270px;
 }
+
+#main_wrapper{
+    width: 100vw;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    min-height: 621px;
+}

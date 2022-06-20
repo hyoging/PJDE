@@ -41,6 +41,7 @@ app.get('/logout', function(req, res){
 
 app.get("/main", function(req,res){ 
     var userId = req.cookies['id'];
+    var userName = req.cookies['name'];
     
 
     var sql1 = 'select * from project where manager = "' + userId + '" or userId1 = "' + userId + '" or userId2 = "' + userId + '" or userId3 = "' + userId + '" or userId4 = "' + userId + '";';
@@ -52,23 +53,26 @@ app.get("/main", function(req,res){
         if (err) throw err;
         db.query(sql2, function (err, notice, fields) {
             if (err) throw err;
-            res.render('main', {result:result, notice:notice, userId:userId});
+            res.render('main', {result:result, notice:notice, userId:userId, userName:userName});
         }); 
     }); 
 })
 
 app.get("/addProject", function(req,res){ 
-    res.render('addProject');
+    var userId = req.cookies['id'];
+    var userName = req.cookies['name'];
+    res.render('addProject', {userId:userId, userName:userName});
 })
 
 app.get("/main/notice", function(req,res){ 
     var userId = req.cookies['id'];
+    var userName = req.cookies['name'];
     const sql = 'select * from notice join project where notice.proid = project.proid and (manager = "' + userId + '" or userId1 = "' + userId + '" or userId2 = "' + userId + '" or userId3 = "' + userId + '" or userId4 = "' + userId + '") order by notDate desc;';
     db.query(sql, (err, row)=>{
       if(err) {
         console.error(err.message);
       }
-      res.render('mainNotice', {project:row});
+      res.render('mainNotice', {project:row, userId:userId, userName:userName});
     });
 })
 
@@ -84,23 +88,6 @@ app.get("/main/:id/editProject", function(req,res){
       }
       res.render('editProject', {project:row});
     });
-
-    // if(date == undefined){
-    //     var today = new Date();
-    //     var year = today.getFullYear();
-    //     var month = ('0' + (today.getMonth() + 1)).slice(-2);
-    //     var day = ('0' + today.getDate()).slice(-2);
-
-    //     var date = year + '-' + month  + '-' + day;
-    // }
-
-    // const sql = "SELECT * FROM schedule WHERE proId='" + id + "' and schDate='" + date + "';";
-    // db.query(sql, (err, row)=>{
-    //   if(err) {
-    //     console.error(err.message);
-    //   }
-    //   res.render('calender', {id: id, project:row, date:date, userId:userId, userName:userName});
-    // });
 })
 
 
