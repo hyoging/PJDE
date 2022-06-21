@@ -7,3 +7,4 @@
 - 이지민 - 개발
 - 조나현 - 개발
 
+![logo](https://user-images.githubusercontent.com/81394869/174716223-48076a56-b2f0-4319-850d-eaf79b9a180a.png)
