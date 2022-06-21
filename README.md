@@ -1,5 +1,5 @@
 # PJDE
-![logo](https://user-images.githubusercontent.com/81394869/174716223-48076a56-b2f0-4319-850d-eaf79b9a180a.png)
+<center>![logo](https://user-images.githubusercontent.com/81394869/174716223-48076a56-b2f0-4319-850d-eaf79b9a180a.png)</center>
 ### 프젝돔이
 2022 IT SHOW 프로젝트
 - 고에스더 - 개발
