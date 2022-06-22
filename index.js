@@ -21,9 +21,9 @@ const { render } = require('express/lib/response')
 
 const db = mysql.createConnection({
     host     : 'localhost',
-    user     : 'root',
-    password : '111111',
-    database : 'pjde01'
+    user     : 'PJDE',
+    password : '1234',
+    database : 'pjde'
   });
 
 db.connect();
@@ -272,6 +272,7 @@ app.get("/trylogin", function(req,res){
 app.get("/create", function(req,res){ 
     var color = req.query.color;
     var title = req.query.title;
+    var manager = req.query.manager;
     var id1 = req.query.id1;
     var id2 = req.query.id2;
     var id3 = req.query.id3;
@@ -318,7 +319,7 @@ app.get("/create", function(req,res){
                                         console.error(err4.message);
                                     }
                                     if(row4.length > 0){
-                                        db.query('insert into project (proId, proName, col, manager, userId1, userId2, userId3, userId4, progress) VALUES("' + proid + '", "' + title + '", "' + color + '", "' + Id + '", "' + id1 + '", "' + id2 + '", "' + id3 + '", "' + id4 + '", "' + progress + '");');
+                                        db.query('insert into project (proId, proName, col, manager, userId1, userId2, userId3, userId4, progress) VALUES("' + proid + '", "' + title + '", "' + color + '", "' + manager + '", "' + id1 + '", "' + id2 + '", "' + id3 + '", "' + id4 + '", "' + progress + '");');
                                         res.send("<script> window.location.replace('/main');</script>");
                                     }else{
                                         res.send("<script>alert('" + id4 + "는(은) 없는 아이디입니다.'); window.location.replace('/addProject');</script>");
