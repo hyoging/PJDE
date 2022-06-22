@@ -21,9 +21,9 @@ const { render } = require('express/lib/response')
 
 const db = mysql.createConnection({
     host     : 'localhost',
-    user     : 'PJDE',
-    password : '1234',
-    database : 'PJDE'
+    user     : 'root',
+    password : '111111',
+    database : 'pjde01'
   });
 
 db.connect();
@@ -231,7 +231,7 @@ app.get("/send", function(req,res){
             if (err) throw err;
             var numRows = result.length;
             if(numRows > 0){
-                res.send("<script>alert('아이디가 중복됩니다.'); window.location.replace('/register');</script>");
+                res.send("<script>alert('이미 존재하는 아이디입니다.'); window.location.replace('/register');</script>");
             }else{
                 db.query('insert into user (userId, password, userName) VALUES("' + id + '", "' + password + '", "' + name + '");');
                 res.send("<script>alert('회원가입 되었습니다.'); window.location.replace('/');</script>");
